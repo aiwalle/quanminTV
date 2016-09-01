@@ -80,9 +80,9 @@
     }
     
     CGSize size = CGSizeZero;
-    CGFloat x = (self.width - size.width) * 0.5;
-    CGFloat y = self.mainView.height - size.height - 10;
-    CGRect pageControlFrame = CGRectMake(x, y, size.width, size.height);
+//    CGFloat x = (self.width - size.width) * 0.5;
+    CGFloat y = self.mainView.height - size.height - _titleLabelHeight;
+    CGRect pageControlFrame = CGRectMake(self.width - 100, y, 100, _titleLabelHeight);
     self.pageControl.frame = pageControlFrame;
     
     if (self.backgroundImageView) {

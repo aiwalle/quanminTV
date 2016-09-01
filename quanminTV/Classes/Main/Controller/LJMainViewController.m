@@ -45,7 +45,7 @@
     
     CGFloat w = self.view.bounds.size.width;
     
-    LJCycleScrollView *cycleScrollView = [LJCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 100, w, 180) delegate:self placeholderImage:[UIImage imageNamed:@"normal_100"]];
+    LJCycleScrollView *cycleScrollView = [LJCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 64, w, 180) delegate:self placeholderImage:[UIImage imageNamed:@"normal_100"]];
     cycleScrollView.imageURLStringsGroup = imagesURLStrings;
     cycleScrollView.titlesGroup = titles;
     [demoContainerView addSubview:cycleScrollView];

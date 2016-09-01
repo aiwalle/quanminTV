@@ -31,7 +31,6 @@
 		1824476A1D7801F000520417 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 182447591D7801F000520417 /* UIImageView+HighlightedWebCache.m */; };
 		1824476B1D7801F000520417 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824475B1D7801F000520417 /* UIImageView+WebCache.m */; };
 		1824476C1D7801F000520417 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824475D1D7801F000520417 /* UIView+WebCacheOperation.m */; };
-		182447701D78136C00520417 /* normal_100@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1824476F1D78136C00520417 /* normal_100@2x.jpg */; };
 		182447731D781D8400520417 /* LJBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182447721D781D8400520417 /* LJBannerViewController.m */; };
 		1824478A1D78210000520417 /* MLeakedObjectProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 182447761D78210000520417 /* MLeakedObjectProxy.m */; };
 		1824478B1D78210000520417 /* MLeaksMessenger.m in Sources */ = {isa = PBXBuildFile; fileRef = 182447791D78210000520417 /* MLeaksMessenger.m */; };
@@ -43,6 +42,7 @@
 		182447911D78210000520417 /* UITabBarController+MemoryLeak.m in Sources */ = {isa = PBXBuildFile; fileRef = 182447851D78210000520417 /* UITabBarController+MemoryLeak.m */; };
 		182447921D78210000520417 /* UIView+MemoryLeak.m in Sources */ = {isa = PBXBuildFile; fileRef = 182447871D78210000520417 /* UIView+MemoryLeak.m */; };
 		182447931D78210000520417 /* UIViewController+MemoryLeak.m in Sources */ = {isa = PBXBuildFile; fileRef = 182447891D78210000520417 /* UIViewController+MemoryLeak.m */; };
+		182447951D78271E00520417 /* normal_100@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182447941D78271E00520417 /* normal_100@2x.png */; };
 		1868A6F51D76A9E800D2CCF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1868A6F41D76A9E800D2CCF9 /* Assets.xcassets */; };
 		1868A6F81D76A9E800D2CCF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1868A6F61D76A9E800D2CCF9 /* LaunchScreen.storyboard */; };
 		1868A7011D76AA7000D2CCF9 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1868A7001D76AA7000D2CCF9 /* IJKMediaFramework.framework */; };
@@ -176,7 +176,6 @@
 		1824475C1D7801F000520417 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		1824475D1D7801F000520417 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		1824476D1D7802CB00520417 /* YYCategoriesMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCategoriesMacro.h; sourceTree = "<group>"; };
-		1824476F1D78136C00520417 /* normal_100@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "normal_100@2x.jpg"; sourceTree = "<group>"; };
 		182447711D781D8400520417 /* LJBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBannerViewController.h; sourceTree = "<group>"; };
 		182447721D781D8400520417 /* LJBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBannerViewController.m; sourceTree = "<group>"; };
 		182447751D78210000520417 /* MLeakedObjectProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLeakedObjectProxy.h; sourceTree = "<group>"; };
@@ -200,6 +199,7 @@
 		182447871D78210000520417 /* UIView+MemoryLeak.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MemoryLeak.m"; sourceTree = "<group>"; };
 		182447881D78210000520417 /* UIViewController+MemoryLeak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MemoryLeak.h"; sourceTree = "<group>"; };
 		182447891D78210000520417 /* UIViewController+MemoryLeak.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MemoryLeak.m"; sourceTree = "<group>"; };
+		182447941D78271E00520417 /* normal_100@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "normal_100@2x.png"; sourceTree = "<group>"; };
 		1868A6E51D76A9E800D2CCF9 /* quanminTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quanminTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1868A6F41D76A9E800D2CCF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1868A6F71D76A9E800D2CCF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -423,7 +423,7 @@
 		1824476E1D78136200520417 /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				1824476F1D78136C00520417 /* normal_100@2x.jpg */,
+				182447941D78271E00520417 /* normal_100@2x.png */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -990,8 +990,8 @@
 				1868A8151D76DAA300D2CCF9 /* mine@2x.png in Resources */,
 				182447281D77CD6500520417 /* live_sel@3x.png in Resources */,
 				1868A8101D76DAA300D2CCF9 /* main@3x.png in Resources */,
-				182447701D78136C00520417 /* normal_100@2x.jpg in Resources */,
 				1868A8181D76DAA300D2CCF9 /* mine_sel@2x.png in Resources */,
+				182447951D78271E00520417 /* normal_100@2x.png in Resources */,
 				182447301D77CF6E00520417 /* nav_image@3x.png in Resources */,
 				1868A8161D76DAA300D2CCF9 /* mine@3x.png in Resources */,
 				1868A6F81D76A9E800D2CCF9 /* LaunchScreen.storyboard in Resources */,
