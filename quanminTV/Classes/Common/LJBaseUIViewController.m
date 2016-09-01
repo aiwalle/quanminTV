@@ -23,8 +23,8 @@
     [super viewDidLoad];
     
     [self setupCurrentViewControllerManager];
-    [self setupTitleData];
-    [self setupTitleView];
+//    [self setupTitleData];
+//    [self setupTitleView];
     [self setupTitleTextAndBarButtonItem];
     [self setupHideKeyboard];
     [self addNotiToObserveUserLogInfomation];

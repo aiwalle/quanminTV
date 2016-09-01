@@ -25,7 +25,6 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [[LJTabBarController alloc] init];
     [self.window makeKeyAndVisible];
-    [[UIApplication sharedApplication] setStatusBarHidden:YES];
     [self checkNetWork];
     
     return YES;
