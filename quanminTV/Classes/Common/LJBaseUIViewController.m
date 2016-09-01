@@ -321,8 +321,8 @@
 
 #pragma mark - **************** 其他设定
 - (void)setupCurrentViewControllerManager {
-    CurrentVCManager *manager = [CurrentVCManager sharedCurrentVCManager];
-    manager.currentViewController = self;
-    self.view.backgroundColor = [UIColor whiteColor];
+//    CurrentVCManager *manager = [CurrentVCManager sharedCurrentVCManager];
+//    manager.currentViewController = self;
+//    self.view.backgroundColor = [UIColor whiteColor];
 }
 @end

@@ -20,6 +20,7 @@
 @end
 
 @implementation LJCycleScrollView
+#pragma mark - **************** initial
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self initialization];
@@ -40,11 +41,11 @@
     _titleLabelBackgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
     _titleLabelHeight = 30;
     _bannerImageViewContentMode = UIViewContentModeScaleToFill;
+    _autoScroll = YES;
 }
 
 // 设置显示图片的collectionView
-- (void)setupMainView
-{
+- (void)setupMainView {
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.minimumLineSpacing = 0;
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -63,8 +64,35 @@
     _mainView = mainView;
 }
 
-+ (instancetype)cycleScrollViewWithFrame:(CGRect)frame delegate:(id<LJCycleScrollViewDelegate>)delegate placeholderImage:(UIImage *)placeholderImage
-{
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    _flowLayout.itemSize = self.frame.size;
+    
+    _mainView.frame = self.bounds;
+    // ?
+    if (_mainView.contentOffset.x == 0 &&  _totalItemsCount) {
+    int targetIndex = 0;
+    targetIndex = _totalItemsCount * 0.5;
+
+    [_mainView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:targetIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+    }
+    
+    CGSize size = CGSizeZero;
+    CGFloat x = (self.width - size.width) * 0.5;
+    CGFloat y = self.mainView.height - size.height - 10;
+    CGRect pageControlFrame = CGRectMake(x, y, size.width, size.height);
+    self.pageControl.frame = pageControlFrame;
+    
+    if (self.backgroundImageView) {
+        self.backgroundImageView.frame = self.bounds;
+    }
+    
+}
+
+#pragma mark - **************** factory Method
++ (instancetype)cycleScrollViewWithFrame:(CGRect)frame delegate:(id<LJCycleScrollViewDelegate>)delegate placeholderImage:(UIImage *)placeholderImage {
     LJCycleScrollView *cycleScrollView = [[self alloc] initWithFrame:frame];
     cycleScrollView.delegate = delegate;
     cycleScrollView.placeholderImage = placeholderImage;
@@ -72,12 +100,12 @@
     return cycleScrollView;
 }
 
-- (void)setPlaceholderImage:(UIImage *)placeholderImage
-{
+#pragma mark - **************** properties
+- (void)setPlaceholderImage:(UIImage *)placeholderImage {
     _placeholderImage = placeholderImage;
     
     if (!self.backgroundImageView) {
-        UIImageView *bgImageView = [UIImageView new];
+        UIImageView *bgImageView = [[UIImageView alloc] init];
         bgImageView.contentMode = UIViewContentModeScaleAspectFit;
         [self insertSubview:bgImageView belowSubview:self.mainView];
         self.backgroundImageView = bgImageView;
@@ -86,8 +114,7 @@
     self.backgroundImageView.image = placeholderImage;
 }
 
-- (void)setImagePathsGroup:(NSArray *)imagePathsGroup
-{
+- (void)setImagePathsGroup:(NSArray *)imagePathsGroup {
     [self invalidateTimer];
     
     _imagePathsGroup = imagePathsGroup;
@@ -108,7 +135,7 @@
 - (void)setImageURLStringsGroup:(NSArray *)imageURLStringsGroup{
     _imageURLStringsGroup = imageURLStringsGroup;
     
-    NSMutableArray *temp = [NSMutableArray new];
+    NSMutableArray *temp = [NSMutableArray array];
     [_imageURLStringsGroup enumerateObjectsUsingBlock:^(NSString * obj, NSUInteger idx, BOOL * stop) {
         NSString *urlString;
         if ([obj isKindOfClass:[NSString class]]) {
@@ -124,13 +151,63 @@
     self.imagePathsGroup = [temp copy];
 }
 
-- (void)setLocalizationImageNamesGroup:(NSArray *)localizationImageNamesGroup {
-    _localizationImageNamesGroup = localizationImageNamesGroup;
-    self.imagePathsGroup = [localizationImageNamesGroup copy];
+-(void)setAutoScroll:(BOOL)autoScroll{
+    _autoScroll = autoScroll;
+    
+    [self invalidateTimer];
+    
+    if (_autoScroll) {
+        [self setupTimer];
+    }
+}
+
+- (void)setupPageControl {
+    if (_pageControl) [_pageControl removeFromSuperview]; // 重新加载数据时调整
+    
+    if (self.imagePathsGroup.count == 0) return;
+    
+    if (self.imagePathsGroup.count == 1) return;
+    
+    int indexOnPageControl = [self pageControlIndexWithCurrentCellIndex:[self currentIndex]];
+    
+    UIPageControl *pageControl = [[UIPageControl alloc] init];
+    pageControl.numberOfPages = self.imagePathsGroup.count;
+    pageControl.userInteractionEnabled = NO;
+    pageControl.currentPage = indexOnPageControl;
+    [self addSubview:pageControl];
+    _pageControl = pageControl;
+}
+
+- (void)automaticScroll {
+    if (0 == _totalItemsCount) return;
+    int currentIndex = [self currentIndex];
+    int targetIndex = currentIndex + 1;
+    [self scrollToIndex:targetIndex];
+}
+
+- (void)scrollToIndex:(int)targetIndex {
+    if (targetIndex >= _totalItemsCount) {
+        targetIndex = _totalItemsCount * 0.5;
+        [_mainView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:targetIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+        return;
+    }
+    [_mainView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:targetIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+}
+
+#pragma mark - **************** timer
+- (void)invalidateTimer {
+    [_timer invalidate];
+    _timer = nil;
+}
+
+- (void)setupTimer {
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:self.autoScrollTimeInterval target:self selector:@selector(automaticScroll) userInfo:nil repeats:YES];
+    _timer = timer;
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 }
 
 
-
+#pragma mark - **************** UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return _totalItemsCount;
 }
@@ -172,8 +249,7 @@
     return (int)index % self.imagePathsGroup.count;
 }
 
-- (int)currentIndex
-{
+- (int)currentIndex {
     if (_mainView.width == 0 || _mainView.height == 0) {
         return 0;
     }
@@ -181,24 +257,18 @@
     int index = 0;
     if (_flowLayout.scrollDirection == UICollectionViewScrollDirectionHorizontal) {
         index = (_mainView.contentOffset.x + _flowLayout.itemSize.width * 0.5) / _flowLayout.itemSize.width;
-    } else {
-        index = (_mainView.contentOffset.y + _flowLayout.itemSize.height * 0.5) / _flowLayout.itemSize.height;
     }
-    
     return MAX(0, index);
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if ([self.delegate respondsToSelector:@selector(cycleScrollView:didSelectItemAtIndex:)]) {
-        [self.delegate cycleScrollView:self didSelectItemAtIndex:[self pageControlIndexWithCurrentCellIndex:indexPath.item]];
+        [self.delegate cycleScrollView:self didSelectItemAtIndex:[self pageControlIndexWithCurrentCellIndex:indexPath.item % self.imagePathsGroup.count]];
     }
 }
 
-#pragma mark - UIScrollViewDelegate
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
+#pragma mark - **************** UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (!self.imagePathsGroup.count) return; // 解决清除timer时偶尔会出现的问题
     int itemIndex = [self currentIndex];
     int indexOnPageControl = [self pageControlIndexWithCurrentCellIndex:itemIndex];
@@ -207,80 +277,24 @@
     
 }
 
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
-{
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     if (self.autoScroll) {
         [self invalidateTimer];
     }
 }
 
-- (void)invalidateTimer
-{
-    [_timer invalidate];
-    _timer = nil;
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     if (self.autoScroll) {
         [self setupTimer];
     }
 }
 
-- (void)setupTimer
-{
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:self.autoScrollTimeInterval target:self selector:@selector(automaticScroll) userInfo:nil repeats:YES];
-    _timer = timer;
-    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
-}
-
-- (void)setupPageControl
-{
-    if (_pageControl) [_pageControl removeFromSuperview]; // 重新加载数据时调整
-    
-    if (self.imagePathsGroup.count == 0) return;
-    
-    if (self.imagePathsGroup.count == 1) return;
-    
-    int indexOnPageControl = [self pageControlIndexWithCurrentCellIndex:[self currentIndex]];
-
-    UIPageControl *pageControl = [[UIPageControl alloc] init];
-    pageControl.numberOfPages = self.imagePathsGroup.count;
-    pageControl.userInteractionEnabled = NO;
-    pageControl.currentPage = indexOnPageControl;
-    [self addSubview:pageControl];
-    _pageControl = pageControl;
-}
-
-- (void)automaticScroll
-{
-    if (0 == _totalItemsCount) return;
-    int currentIndex = [self currentIndex];
-    int targetIndex = currentIndex + 1;
-    [self scrollToIndex:targetIndex];
-}
-
-- (void)scrollToIndex:(int)targetIndex
-{
-    if (targetIndex >= _totalItemsCount) {
-        targetIndex = _totalItemsCount * 0.5;
-        [_mainView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:targetIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
-        return;
-    }
-    [_mainView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:targetIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     [self scrollViewDidEndScrollingAnimation:self.mainView];
 }
 
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
-{
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
     if (!self.imagePathsGroup.count) return; // 解决清除timer时偶尔会出现的问题
-//    int itemIndex = [self currentIndex];
-//    int indexOnPageControl = [self pageControlIndexWithCurrentCellIndex:itemIndex];
 }
-
 
 @end

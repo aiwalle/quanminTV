@@ -43,9 +43,6 @@
 /** 每张图片对应要显示的文字数组 */
 @property (nonatomic, strong) NSArray *titlesGroup;
 
-/** 本地图片数组 */
-@property (nonatomic, strong) NSArray *localizationImageNamesGroup;
-
 @property (nonatomic, weak) id<LJCycleScrollViewDelegate> delegate;
 
 + (instancetype)cycleScrollViewWithFrame:(CGRect)frame delegate:(id<LJCycleScrollViewDelegate>)delegate placeholderImage:(UIImage *)placeholderImage;
