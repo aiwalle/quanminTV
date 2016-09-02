@@ -22,5 +22,6 @@
     
     textview.backgroundColor = [UIColor greenColor];
     [self.view addSubview:textview];
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 @end

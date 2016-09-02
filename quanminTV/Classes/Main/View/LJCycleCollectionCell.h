@@ -1,5 +1,5 @@
 //
-//  LJCollectionViewCell.h
+//  LJCycleCollectionCell.h
 //  quanminTV
 //
 //  Created by liang on 16/9/1.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LJCollectionViewCell : UICollectionViewCell
+@interface LJCycleCollectionCell : UICollectionViewCell
 @property (nonatomic, weak) UIImageView *imageView;
 @property (nonatomic, copy) NSString *title;
 

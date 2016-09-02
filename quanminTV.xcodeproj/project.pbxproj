@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181A056A1D7919550052D3A3 /* LJGamesCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181A05691D7919550052D3A3 /* LJGamesCollectionView.m */; };
+		181A056E1D7946C20052D3A3 /* LJGamesCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 181A056D1D7946C20052D3A3 /* LJGamesCollectionCell.m */; };
+		181A05711D794CF90052D3A3 /* LJColumnListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181A05701D794CF90052D3A3 /* LJColumnListController.m */; };
 		182447261D77CD6500520417 /* live_sel.png in Resources */ = {isa = PBXBuildFile; fileRef = 182447231D77CD6500520417 /* live_sel.png */; };
 		182447271D77CD6500520417 /* live_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182447241D77CD6500520417 /* live_sel@2x.png */; };
 		182447281D77CD6500520417 /* live_sel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182447251D77CD6500520417 /* live_sel@3x.png */; };
@@ -14,7 +17,7 @@
 		1824472F1D77CF6E00520417 /* nav_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1824472C1D77CF6E00520417 /* nav_image@2x.png */; };
 		182447301D77CF6E00520417 /* nav_image@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1824472D1D77CF6E00520417 /* nav_image@3x.png */; };
 		182447331D77D77C00520417 /* LJCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 182447321D77D77C00520417 /* LJCycleScrollView.m */; };
-		1824473A1D77FDD700520417 /* LJCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 182447391D77FDD700520417 /* LJCollectionViewCell.m */; };
+		1824473A1D77FDD700520417 /* LJCycleCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 182447391D77FDD700520417 /* LJCycleCollectionCell.m */; };
 		1824473D1D78007C00520417 /* UIView+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824473C1D78007C00520417 /* UIView+YYAdd.m */; };
 		1824475E1D7801F000520417 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 1824473F1D7801F000520417 /* LICENSE */; };
 		1824475F1D7801F000520417 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 182447421D7801F000520417 /* NSData+ImageContentType.m */; };
@@ -133,6 +136,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		181A05681D7919550052D3A3 /* LJGamesCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJGamesCollectionView.h; sourceTree = "<group>"; };
+		181A05691D7919550052D3A3 /* LJGamesCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJGamesCollectionView.m; sourceTree = "<group>"; };
+		181A056C1D7946C20052D3A3 /* LJGamesCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJGamesCollectionCell.h; sourceTree = "<group>"; };
+		181A056D1D7946C20052D3A3 /* LJGamesCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJGamesCollectionCell.m; sourceTree = "<group>"; };
+		181A056F1D794CF90052D3A3 /* LJColumnListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJColumnListController.h; sourceTree = "<group>"; };
+		181A05701D794CF90052D3A3 /* LJColumnListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJColumnListController.m; sourceTree = "<group>"; };
 		182447231D77CD6500520417 /* live_sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = live_sel.png; sourceTree = "<group>"; };
 		182447241D77CD6500520417 /* live_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "live_sel@2x.png"; sourceTree = "<group>"; };
 		182447251D77CD6500520417 /* live_sel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "live_sel@3x.png"; sourceTree = "<group>"; };
@@ -141,8 +150,8 @@
 		1824472D1D77CF6E00520417 /* nav_image@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_image@3x.png"; sourceTree = "<group>"; };
 		182447311D77D77C00520417 /* LJCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJCycleScrollView.h; sourceTree = "<group>"; };
 		182447321D77D77C00520417 /* LJCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJCycleScrollView.m; sourceTree = "<group>"; };
-		182447381D77FDD700520417 /* LJCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJCollectionViewCell.h; sourceTree = "<group>"; };
-		182447391D77FDD700520417 /* LJCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJCollectionViewCell.m; sourceTree = "<group>"; };
+		182447381D77FDD700520417 /* LJCycleCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJCycleCollectionCell.h; sourceTree = "<group>"; };
+		182447391D77FDD700520417 /* LJCycleCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJCycleCollectionCell.m; sourceTree = "<group>"; };
 		1824473B1D78007C00520417 /* UIView+YYAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YYAdd.h"; sourceTree = "<group>"; };
 		1824473C1D78007C00520417 /* UIView+YYAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YYAdd.m"; sourceTree = "<group>"; };
 		1824473F1D7801F000520417 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -542,6 +551,8 @@
 			children = (
 				1868A7E01D76D70300D2CCF9 /* LJColumnViewController.h */,
 				1868A7E11D76D70300D2CCF9 /* LJColumnViewController.m */,
+				181A056F1D794CF90052D3A3 /* LJColumnListController.h */,
+				181A05701D794CF90052D3A3 /* LJColumnListController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -626,8 +637,12 @@
 			children = (
 				182447311D77D77C00520417 /* LJCycleScrollView.h */,
 				182447321D77D77C00520417 /* LJCycleScrollView.m */,
-				182447381D77FDD700520417 /* LJCollectionViewCell.h */,
-				182447391D77FDD700520417 /* LJCollectionViewCell.m */,
+				182447381D77FDD700520417 /* LJCycleCollectionCell.h */,
+				182447391D77FDD700520417 /* LJCycleCollectionCell.m */,
+				181A05681D7919550052D3A3 /* LJGamesCollectionView.h */,
+				181A05691D7919550052D3A3 /* LJGamesCollectionView.m */,
+				181A056C1D7946C20052D3A3 /* LJGamesCollectionCell.h */,
+				181A056D1D7946C20052D3A3 /* LJGamesCollectionCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1051,6 +1066,7 @@
 				1868A7D01D76D5AA00D2CCF9 /* AFURLRequestSerialization.m in Sources */,
 				1824478F1D78210000520417 /* UIPageViewController+MemoryLeak.m in Sources */,
 				1824476B1D7801F000520417 /* UIImageView+WebCache.m in Sources */,
+				181A05711D794CF90052D3A3 /* LJColumnListController.m in Sources */,
 				1868A78B1D76D38E00D2CCF9 /* UIScrollView+MJExtension.m in Sources */,
 				182447911D78210000520417 /* UITabBarController+MemoryLeak.m in Sources */,
 				1824478A1D78210000520417 /* MLeakedObjectProxy.m in Sources */,
@@ -1070,6 +1086,7 @@
 				1868A71A1D76D19400D2CCF9 /* main.m in Sources */,
 				1868A7D61D76D5AA00D2CCF9 /* UIAlertView+AFNetworking.m in Sources */,
 				1868A7A01D76D3BF00D2CCF9 /* UICreator.m in Sources */,
+				181A056A1D7919550052D3A3 /* LJGamesCollectionView.m in Sources */,
 				1868A7861D76D38E00D2CCF9 /* MJRefreshGifHeader.m in Sources */,
 				182447601D7801F000520417 /* SDImageCache.m in Sources */,
 				1868A74B1D76D37100D2CCF9 /* LJNavigationController.m in Sources */,
@@ -1084,7 +1101,8 @@
 				1868A78C1D76D38E00D2CCF9 /* UIScrollView+MJRefresh.m in Sources */,
 				1824473D1D78007C00520417 /* UIView+YYAdd.m in Sources */,
 				182447691D7801F000520417 /* UIImage+MultiFormat.m in Sources */,
-				1824473A1D77FDD700520417 /* LJCollectionViewCell.m in Sources */,
+				181A056E1D7946C20052D3A3 /* LJGamesCollectionCell.m in Sources */,
+				1824473A1D77FDD700520417 /* LJCycleCollectionCell.m in Sources */,
 				1868A77B1D76D38E00D2CCF9 /* MJRefreshAutoFooter.m in Sources */,
 				1868A79D1D76D3BF00D2CCF9 /* LJNetWorkingTools.m in Sources */,
 				182447651D7801F000520417 /* SDWebImageManager.m in Sources */,

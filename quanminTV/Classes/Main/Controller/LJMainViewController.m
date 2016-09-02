@@ -9,7 +9,9 @@
 #import "LJMainViewController.h"
 #import "LJCycleScrollView.h"
 #import "LJBannerViewController.h"
-@interface LJMainViewController()<LJCycleScrollViewDelegate>
+#import "LJGamesCollectionView.h"
+#import "LJColumnListController.h"
+@interface LJMainViewController()<LJCycleScrollViewDelegate, LJGamesCollectionViewDelegate>
 @property (nonatomic, strong) NSArray *imagesURLStrings;
 @end
 
@@ -19,16 +21,21 @@
     [super viewDidLoad];
     [self setupTitleLogoView];
     
+    [self setupBannerView];
     
-    self.view.backgroundColor = [UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:0.99];
-    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"005.jpg"]];
-    backgroundView.frame = self.view.bounds;
-    [self.view addSubview:backgroundView];
+    [self setupGamesCollectionView];
     
-    UIScrollView *demoContainerView = [[UIScrollView alloc] initWithFrame:self.view.frame];
-    demoContainerView.contentSize = CGSizeMake(self.view.frame.size.width, 1200);
-    [self.view addSubview:demoContainerView];
+}
 
+- (void)setupTitleLogoView {
+    UIImageView *titleIV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 93, 44)];
+//    titleIV.image = [UIImage imageNamed:@"nav_image"];
+    self.navigationItem.titleView = titleIV;
+}
+
+- (void)setupBannerView {
+    self.view.backgroundColor = [UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:0.99];
+    
     NSArray *imagesURLStrings = @[
                                   @"https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=a4b3d7085dee3d6d2293d48b252b5910/0e2442a7d933c89524cd5cd4d51373f0830200ea.jpg",
                                   @"https://ss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=a41eb338dd33c895a62bcb3bb72e47c2/5fdf8db1cb134954a2192ccb524e9258d1094a1e.jpg",
@@ -48,21 +55,24 @@
     LJCycleScrollView *cycleScrollView = [LJCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 64, w, 180) delegate:self placeholderImage:[UIImage imageNamed:@"normal_100"]];
     cycleScrollView.imageURLStringsGroup = imagesURLStrings;
     cycleScrollView.titlesGroup = titles;
-    [demoContainerView addSubview:cycleScrollView];
-    
+    [self.view addSubview:cycleScrollView];
 }
-
-- (void)setupTitleLogoView {
-    UIImageView *titleIV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 93, 44)];
-    titleIV.image = [UIImage imageNamed:@"nav_image"];
-    self.navigationItem.titleView = titleIV;
-}
-
 
 - (void)cycleScrollView:(LJCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
     LJBannerViewController *bannerVC = [[LJBannerViewController alloc] init];
     bannerVC.urlString = _imagesURLStrings[index];
     [self.navigationController pushViewController:bannerVC animated:YES];
+}
+
+- (void)setupGamesCollectionView {
+    LJGamesCollectionView *gamesColletionV = [[LJGamesCollectionView alloc] initWithFrame:CGRectMake(0, 244, DeviceWidth, 120)];
+    gamesColletionV.delegate = self;
+    [self.view addSubview:gamesColletionV];
+}
+
+- (void)gamesCollectionView:(LJGamesCollectionView *)gamesCollectionView didSelectItemAtIndex:(NSInteger)index {
+    LJColumnListController *columnVC = [[LJColumnListController alloc] init];
+    [self.navigationController pushViewController:columnVC animated:YES];
 }
 
 @end

@@ -1,18 +1,18 @@
 //
-//  LJCollectionViewCell.m
+//  LJCycleCollectionCell.m
 //  quanminTV
 //
 //  Created by liang on 16/9/1.
 //  Copyright © 2016年 liang. All rights reserved.
 //
 
-#import "LJCollectionViewCell.h"
+#import "LJCycleCollectionCell.h"
 
-@interface LJCollectionViewCell()
+@interface LJCycleCollectionCell()
 @property (nonatomic, weak) UILabel *titleLabel;
 @end
 
-@implementation LJCollectionViewCell
+@implementation LJCycleCollectionCell
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self setupImageView];

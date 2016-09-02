@@ -7,7 +7,7 @@
 //
 
 #import "LJCycleScrollView.h"
-#import "LJCollectionViewCell.h"
+#import "LJCycleCollectionCell.h"
 
 @interface LJCycleScrollView()<UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic, weak) UICollectionView *mainView; // 显示图片的collectionView
@@ -56,7 +56,7 @@
     mainView.pagingEnabled = YES;
     mainView.showsHorizontalScrollIndicator = NO;
     mainView.showsVerticalScrollIndicator = NO;
-    [mainView registerClass:[LJCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([LJCollectionViewCell class])];
+    [mainView registerClass:[LJCycleCollectionCell class] forCellWithReuseIdentifier:NSStringFromClass([LJCycleCollectionCell class])];
     mainView.dataSource = self;
     mainView.delegate = self;
     mainView.scrollsToTop = NO;
@@ -213,7 +213,7 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    LJCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([LJCollectionViewCell class]) forIndexPath:indexPath];
+    LJCycleCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([LJCycleCollectionCell class]) forIndexPath:indexPath];
     long itemIndex = [self pageControlIndexWithCurrentCellIndex:indexPath.item];
     
     NSString *imagePath = self.imagePathsGroup[itemIndex];
