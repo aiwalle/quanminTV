@@ -55,7 +55,7 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    _flowLayout.itemSize = CGSizeMake(100, 120);
+    _flowLayout.itemSize = CGSizeMake(80, 100);
     _mainView.frame = self.bounds;
 }
 

@@ -9,11 +9,8 @@
 #import "AppDelegate.h"
 #import "LJTabBarController.h"
 #import "LJNetWorkingTools.h"
-
-@interface AppDelegate () {
-    UIImageView *_adImageView;
-    UIButton *_adButton;
-}
+#import "JPFPSStatus.h"
+@interface AppDelegate ()
 
 @end
 
@@ -27,6 +24,9 @@
     [self.window makeKeyAndVisible];
     [self checkNetWork];
     
+#if defined(DEBUG)||defined(_DEBUG)
+    [[JPFPSStatus sharedInstance] open];
+#endif
     return YES;
 }
 
