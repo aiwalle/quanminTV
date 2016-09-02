@@ -11,6 +11,7 @@
 		181A056E1D7946C20052D3A3 /* LJGamesCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 181A056D1D7946C20052D3A3 /* LJGamesCollectionCell.m */; };
 		181A05711D794CF90052D3A3 /* LJColumnListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181A05701D794CF90052D3A3 /* LJColumnListController.m */; };
 		181A05771D79550F0052D3A3 /* JPFPSStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 181A05761D79550F0052D3A3 /* JPFPSStatus.m */; };
+		181A057A1D795A5F0052D3A3 /* LJMainSectioView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181A05791D795A5F0052D3A3 /* LJMainSectioView.m */; };
 		182447261D77CD6500520417 /* live_sel.png in Resources */ = {isa = PBXBuildFile; fileRef = 182447231D77CD6500520417 /* live_sel.png */; };
 		182447271D77CD6500520417 /* live_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182447241D77CD6500520417 /* live_sel@2x.png */; };
 		182447281D77CD6500520417 /* live_sel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182447251D77CD6500520417 /* live_sel@3x.png */; };
@@ -145,6 +146,8 @@
 		181A05701D794CF90052D3A3 /* LJColumnListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJColumnListController.m; sourceTree = "<group>"; };
 		181A05751D79550F0052D3A3 /* JPFPSStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPFPSStatus.h; sourceTree = "<group>"; };
 		181A05761D79550F0052D3A3 /* JPFPSStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPFPSStatus.m; sourceTree = "<group>"; };
+		181A05781D795A5F0052D3A3 /* LJMainSectioView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJMainSectioView.h; sourceTree = "<group>"; };
+		181A05791D795A5F0052D3A3 /* LJMainSectioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJMainSectioView.m; sourceTree = "<group>"; };
 		182447231D77CD6500520417 /* live_sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = live_sel.png; sourceTree = "<group>"; };
 		182447241D77CD6500520417 /* live_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "live_sel@2x.png"; sourceTree = "<group>"; };
 		182447251D77CD6500520417 /* live_sel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "live_sel@3x.png"; sourceTree = "<group>"; };
@@ -655,6 +658,8 @@
 				181A05691D7919550052D3A3 /* LJGamesCollectionView.m */,
 				181A056C1D7946C20052D3A3 /* LJGamesCollectionCell.h */,
 				181A056D1D7946C20052D3A3 /* LJGamesCollectionCell.m */,
+				181A05781D795A5F0052D3A3 /* LJMainSectioView.h */,
+				181A05791D795A5F0052D3A3 /* LJMainSectioView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1112,6 +1117,7 @@
 				1868A7CF1D76D5AA00D2CCF9 /* AFURLConnectionOperation.m in Sources */,
 				1824478D1D78210000520417 /* UIApplication+MemoryLeak.m in Sources */,
 				1868A77C1D76D38E00D2CCF9 /* MJRefreshBackFooter.m in Sources */,
+				181A057A1D795A5F0052D3A3 /* LJMainSectioView.m in Sources */,
 				1868A78C1D76D38E00D2CCF9 /* UIScrollView+MJRefresh.m in Sources */,
 				1824473D1D78007C00520417 /* UIView+YYAdd.m in Sources */,
 				182447691D7801F000520417 /* UIImage+MultiFormat.m in Sources */,

@@ -11,6 +11,7 @@
 #import "LJBannerViewController.h"
 #import "LJGamesCollectionView.h"
 #import "LJColumnListController.h"
+#import "LJMainSectioView.h"
 @interface LJMainViewController()<UITableViewDataSource, UITableViewDelegate, LJCycleScrollViewDelegate, LJGamesCollectionViewDelegate>
 @property (nonatomic, strong) NSArray *imagesURLStrings;
 @property (nonatomic, strong) UITableView *mainTableView;
@@ -23,8 +24,6 @@
     [super viewDidLoad];
     [self setupTitleLogoView];
     [self.view addSubview:self.mainTableView];
-    
-    
 }
 
 - (void)setupTitleLogoView {
@@ -86,21 +85,30 @@
 }
 
 #pragma mark - **************** UITableViewDataSource
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 5;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 20;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 2;
 }
 
 static NSString * const CellId = @"CellId";
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellId];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellId];
     }
     cell.textLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row];
     return cell;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    LJMainSectioView *sectionV = [[LJMainSectioView alloc] initWithFrame:CGRectMake(0, 0, DeviceWidth, 20)];
+    return sectionV;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 40;
 }
 @end
