@@ -34,7 +34,7 @@
 
 - (UITableView *)mainTableView {
     if (!_mainTableView) {
-        _mainTableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+        _mainTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
         _mainTableView.dataSource = self;
         _mainTableView.delegate = self;
         [self setupBannerView];

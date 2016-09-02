@@ -12,6 +12,9 @@
 		181A05711D794CF90052D3A3 /* LJColumnListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181A05701D794CF90052D3A3 /* LJColumnListController.m */; };
 		181A05771D79550F0052D3A3 /* JPFPSStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 181A05761D79550F0052D3A3 /* JPFPSStatus.m */; };
 		181A057A1D795A5F0052D3A3 /* LJMainSectioView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181A05791D795A5F0052D3A3 /* LJMainSectioView.m */; };
+		181A057D1D797BA60052D3A3 /* LJRecommendCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181A057C1D797BA60052D3A3 /* LJRecommendCollectionView.m */; };
+		181A05801D797CDB0052D3A3 /* LJRecommendCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 181A057F1D797CDB0052D3A3 /* LJRecommendCollectionCell.m */; };
+		181A05831D797E930052D3A3 /* LJRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 181A05821D797E930052D3A3 /* LJRecommendCell.m */; };
 		182447261D77CD6500520417 /* live_sel.png in Resources */ = {isa = PBXBuildFile; fileRef = 182447231D77CD6500520417 /* live_sel.png */; };
 		182447271D77CD6500520417 /* live_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182447241D77CD6500520417 /* live_sel@2x.png */; };
 		182447281D77CD6500520417 /* live_sel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182447251D77CD6500520417 /* live_sel@3x.png */; };
@@ -148,6 +151,12 @@
 		181A05761D79550F0052D3A3 /* JPFPSStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPFPSStatus.m; sourceTree = "<group>"; };
 		181A05781D795A5F0052D3A3 /* LJMainSectioView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJMainSectioView.h; sourceTree = "<group>"; };
 		181A05791D795A5F0052D3A3 /* LJMainSectioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJMainSectioView.m; sourceTree = "<group>"; };
+		181A057B1D797BA60052D3A3 /* LJRecommendCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJRecommendCollectionView.h; sourceTree = "<group>"; };
+		181A057C1D797BA60052D3A3 /* LJRecommendCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJRecommendCollectionView.m; sourceTree = "<group>"; };
+		181A057E1D797CDB0052D3A3 /* LJRecommendCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJRecommendCollectionCell.h; sourceTree = "<group>"; };
+		181A057F1D797CDB0052D3A3 /* LJRecommendCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJRecommendCollectionCell.m; sourceTree = "<group>"; };
+		181A05811D797E930052D3A3 /* LJRecommendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJRecommendCell.h; sourceTree = "<group>"; };
+		181A05821D797E930052D3A3 /* LJRecommendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJRecommendCell.m; sourceTree = "<group>"; };
 		182447231D77CD6500520417 /* live_sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = live_sel.png; sourceTree = "<group>"; };
 		182447241D77CD6500520417 /* live_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "live_sel@2x.png"; sourceTree = "<group>"; };
 		182447251D77CD6500520417 /* live_sel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "live_sel@3x.png"; sourceTree = "<group>"; };
@@ -660,6 +669,12 @@
 				181A056D1D7946C20052D3A3 /* LJGamesCollectionCell.m */,
 				181A05781D795A5F0052D3A3 /* LJMainSectioView.h */,
 				181A05791D795A5F0052D3A3 /* LJMainSectioView.m */,
+				181A05811D797E930052D3A3 /* LJRecommendCell.h */,
+				181A05821D797E930052D3A3 /* LJRecommendCell.m */,
+				181A057B1D797BA60052D3A3 /* LJRecommendCollectionView.h */,
+				181A057C1D797BA60052D3A3 /* LJRecommendCollectionView.m */,
+				181A057E1D797CDB0052D3A3 /* LJRecommendCollectionCell.h */,
+				181A057F1D797CDB0052D3A3 /* LJRecommendCollectionCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1072,6 +1087,7 @@
 				1868A7D21D76D5AA00D2CCF9 /* AFURLSessionManager.m in Sources */,
 				1868A7801D76D38E00D2CCF9 /* MJRefreshAutoGifFooter.m in Sources */,
 				1868A7CC1D76D5AA00D2CCF9 /* AFHTTPSessionManager.m in Sources */,
+				181A05831D797E930052D3A3 /* LJRecommendCell.m in Sources */,
 				182447731D781D8400520417 /* LJBannerViewController.m in Sources */,
 				182447671D7801F000520417 /* UIButton+WebCache.m in Sources */,
 				181A05771D79550F0052D3A3 /* JPFPSStatus.m in Sources */,
@@ -1120,6 +1136,7 @@
 				181A057A1D795A5F0052D3A3 /* LJMainSectioView.m in Sources */,
 				1868A78C1D76D38E00D2CCF9 /* UIScrollView+MJRefresh.m in Sources */,
 				1824473D1D78007C00520417 /* UIView+YYAdd.m in Sources */,
+				181A057D1D797BA60052D3A3 /* LJRecommendCollectionView.m in Sources */,
 				182447691D7801F000520417 /* UIImage+MultiFormat.m in Sources */,
 				181A056E1D7946C20052D3A3 /* LJGamesCollectionCell.m in Sources */,
 				1824473A1D77FDD700520417 /* LJCycleCollectionCell.m in Sources */,
@@ -1128,6 +1145,7 @@
 				182447651D7801F000520417 /* SDWebImageManager.m in Sources */,
 				1824478E1D78210000520417 /* UINavigationController+MemoryLeak.m in Sources */,
 				182447631D7801F000520417 /* SDWebImageDownloader.m in Sources */,
+				181A05801D797CDB0052D3A3 /* LJRecommendCollectionCell.m in Sources */,
 				1868A7D71D76D5AA00D2CCF9 /* UIButton+AFNetworking.m in Sources */,
 				182447641D7801F000520417 /* SDWebImageDownloaderOperation.m in Sources */,
 				1868A74D1D76D37100D2CCF9 /* LJTabBarController.m in Sources */,
