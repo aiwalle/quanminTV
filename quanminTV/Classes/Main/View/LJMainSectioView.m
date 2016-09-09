@@ -72,7 +72,7 @@
     [super layoutSubviews];
     CGFloat redViewX = 0;
     CGFloat redViewY = self.height / 4;
-    CGFloat redViewW = 15;
+    CGFloat redViewW = 10;
     CGFloat redViewH = self.height / 2;
     _redView.frame = CGRectMake(redViewX, redViewY, redViewW, redViewH);
     

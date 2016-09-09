@@ -9,7 +9,7 @@
 #import "LJTabBarController.h"
 #import "LJNavigationController.h"
 #import "LJMainViewController.h"
-#import "LJColumnViewController.h"
+#import "LJColumnListController.h"
 #import "LJLivingListController.h"
 #import "LJMineViewController.h"
 @interface LJTabBarController ()
@@ -52,7 +52,7 @@
  */
 - (void)setupChildVCs{
     [self setupChildVc:[[LJMainViewController alloc] init] title:@"首页" image:@"main" selectedImage:@"main_sel"];
-    [self setupChildVc:[[LJColumnViewController alloc] init] title:@"栏目" image:@"column" selectedImage:@"column_sel"];
+    [self setupChildVc:[[LJColumnListController alloc] init] title:@"栏目" image:@"column" selectedImage:@"column_sel"];
     [self setupChildVc:[[LJLivingListController alloc] init] title:@"直播" image:@"live" selectedImage:@"live_sel"];
     [self setupChildVc:[[LJMineViewController alloc] init] title:@"我的" image:@"mine" selectedImage:@"mine_sel"];
 }
