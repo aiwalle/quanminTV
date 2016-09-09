@@ -24,9 +24,11 @@ static NSString * const CellId = @"ColumnListCell";
     if (!_columnCollectionV) {
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
         flowLayout.minimumLineSpacing = 10;
-        flowLayout.itemSize = CGSizeMake((DeviceWidth - 20) / 3, 120);
+        flowLayout.itemSize = CGSizeMake((DeviceWidth - 20 - 20) / 3, 120);
         _columnCollectionV = [[UICollectionView alloc] initWithFrame:CGRectMake(10, 10, DeviceWidth - 20, DeviceHeight - 20) collectionViewLayout:flowLayout];
+        _columnCollectionV.backgroundColor = [UIColor whiteColor];
         _columnCollectionV.showsHorizontalScrollIndicator = NO;
+        _columnCollectionV.showsVerticalScrollIndicator = NO;
         [_columnCollectionV registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:CellId];
         _columnCollectionV.dataSource = self;
         _columnCollectionV.delegate = self;
@@ -39,6 +41,7 @@ static NSString * const CellId = @"ColumnListCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellId forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor yellowColor];
     
     return cell;
 }
