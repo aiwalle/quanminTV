@@ -10,7 +10,7 @@
 #import "LJRecommendCollectionView.h"
 
 @interface LJRecommendCell()
-@property (nonatomic, strong) LJRecommendCollectionView *recommendCollevtionV;
+
 @end
 @implementation LJRecommendCell
 + (instancetype)cellWithTableView:(UITableView *)tableView {

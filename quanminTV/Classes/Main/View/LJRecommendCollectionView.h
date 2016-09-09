@@ -9,13 +9,12 @@
 #import <UIKit/UIKit.h>
 @class LJRecommendCollectionView;
 @protocol LJRecommendCollectionViewDelegate <NSObject>
-
 @optional
-
-
 - (void)recommendCollectionView:(LJRecommendCollectionView *)recommendCollectionView didSelectItemAtIndex:(NSInteger)index;
 
 @end
+
 @interface LJRecommendCollectionView : UIView
 @property (nonatomic, weak) id<LJRecommendCollectionViewDelegate> delegate;
+@property (nonatomic, assign) BOOL isLivingController;
 @end

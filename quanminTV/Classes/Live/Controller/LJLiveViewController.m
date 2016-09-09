@@ -8,6 +8,11 @@
 
 #import "LJLiveViewController.h"
 
-@implementation LJLiveViewController
+@interface LJLiveViewController()
+@end
 
+@implementation LJLiveViewController
+- (void)viewDidLoad {
+    [super viewDidLoad];
+}
 @end

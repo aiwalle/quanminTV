@@ -13,7 +13,9 @@
 #import "LJColumnListController.h"
 #import "LJMainSectioView.h"
 #import "LJRecommendCell.h"
-@interface LJMainViewController()<UITableViewDataSource, UITableViewDelegate, LJCycleScrollViewDelegate, LJGamesCollectionViewDelegate>
+#import "LJRecommendCollectionView.h"
+#import "LJLiveViewController.h"
+@interface LJMainViewController()<UITableViewDataSource, UITableViewDelegate, LJCycleScrollViewDelegate, LJGamesCollectionViewDelegate, LJRecommendCollectionViewDelegate>
 @property (nonatomic, strong) NSArray *imagesURLStrings;
 @property (nonatomic, strong) UITableView *mainTableView;
 @property (nonatomic, strong) UIView *headerContainerV;
@@ -39,6 +41,7 @@
         _mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _mainTableView.dataSource = self;
         _mainTableView.delegate = self;
+        _mainTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
         [self setupBannerView];
         [self setupGamesCollectionView];
     }
@@ -46,7 +49,7 @@
 }
 
 - (void)setupBannerView {
-    UIView *headerContainerV = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DeviceWidth, 300)];
+    UIView *headerContainerV = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DeviceWidth, 290)];
     _headerContainerV = headerContainerV;
     
     NSArray *imagesURLStrings = @[
@@ -69,7 +72,7 @@
 }
 
 - (void)setupGamesCollectionView {
-    LJGamesCollectionView *gamesColletionV = [[LJGamesCollectionView alloc] initWithFrame:CGRectMake(0, 180, DeviceWidth, 100)];
+    LJGamesCollectionView *gamesColletionV = [[LJGamesCollectionView alloc] initWithFrame:CGRectMake(0, 180, DeviceWidth, 90)];
     gamesColletionV.delegate = self;
     [_headerContainerV addSubview:gamesColletionV];
     _mainTableView.tableHeaderView = _headerContainerV;
@@ -86,6 +89,11 @@
     [self.navigationController pushViewController:columnVC animated:YES];
 }
 
+- (void)recommendCollectionView:(LJRecommendCollectionView *)recommendCollectionView didSelectItemAtIndex:(NSInteger)index {
+    LJLiveViewController *liveVC = [[LJLiveViewController alloc] init];
+    [self.navigationController pushViewController:liveVC animated:YES];
+}
+
 #pragma mark - **************** UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 5;
@@ -97,6 +105,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LJRecommendCell *cell = [LJRecommendCell cellWithTableView:tableView];
+    cell.recommendCollevtionV.delegate = self;
     return cell;
 }
 
@@ -107,10 +116,6 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     LJMainSectioView *sectionV = [[LJMainSectioView alloc] initWithFrame:CGRectMake(0, 0, DeviceWidth, 20)];
     return sectionV;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 0.001;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {

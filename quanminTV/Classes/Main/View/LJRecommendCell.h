@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "LJRecommendCollectionView.h"
 @interface LJRecommendCell : UITableViewCell
+@property (nonatomic, strong) LJRecommendCollectionView *recommendCollevtionV;
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 @end

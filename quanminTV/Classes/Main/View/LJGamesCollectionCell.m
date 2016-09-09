@@ -47,16 +47,16 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    CGFloat iconIVX = 0;
-    CGFloat iconIVY = 0;
-    CGFloat iconIVW = self.width;
+    CGFloat iconIVX = 5;
+    CGFloat iconIVY = 5;
+    CGFloat iconIVW = self.width - iconIVX * 2;
     CGFloat iconIVH = self.height - 30;
     _iconIV.frame = CGRectMake(iconIVX, iconIVY, iconIVW, iconIVH);
     
     CGFloat titleX = 0;
-    CGFloat titleY = iconIVH;
-    CGFloat titleW = self.width;
     CGFloat titleH = 30;
+    CGFloat titleY = self.height - titleH;
+    CGFloat titleW = self.width;
     _titleLabel.frame = CGRectMake(titleX, titleY, titleW, titleH);
 }
 

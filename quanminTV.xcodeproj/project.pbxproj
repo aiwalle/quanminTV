@@ -55,6 +55,7 @@
 		183E19321D828615000A221B /* UIImage+LJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E19311D828615000A221B /* UIImage+LJExtension.m */; };
 		183E19351D82877B000A221B /* logisticicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 183E19331D82877B000A221B /* logisticicon@2x.png */; };
 		183E19361D82877B000A221B /* logisticicon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 183E19341D82877B000A221B /* logisticicon@3x.png */; };
+		183E19391D829282000A221B /* LJLivingListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E19381D829282000A221B /* LJLivingListController.m */; };
 		1868A6F51D76A9E800D2CCF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1868A6F41D76A9E800D2CCF9 /* Assets.xcassets */; };
 		1868A6F81D76A9E800D2CCF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1868A6F61D76A9E800D2CCF9 /* LaunchScreen.storyboard */; };
 		1868A7011D76AA7000D2CCF9 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1868A7001D76AA7000D2CCF9 /* IJKMediaFramework.framework */; };
@@ -233,6 +234,8 @@
 		183E19311D828615000A221B /* UIImage+LJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LJExtension.m"; sourceTree = "<group>"; };
 		183E19331D82877B000A221B /* logisticicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logisticicon@2x.png"; sourceTree = "<group>"; };
 		183E19341D82877B000A221B /* logisticicon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logisticicon@3x.png"; sourceTree = "<group>"; };
+		183E19371D829282000A221B /* LJLivingListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJLivingListController.h; sourceTree = "<group>"; };
+		183E19381D829282000A221B /* LJLivingListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJLivingListController.m; sourceTree = "<group>"; };
 		1868A6E51D76A9E800D2CCF9 /* quanminTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quanminTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1868A6F41D76A9E800D2CCF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1868A6F71D76A9E800D2CCF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -620,6 +623,8 @@
 		1868A7211D76D1BB00D2CCF9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				183E19371D829282000A221B /* LJLivingListController.h */,
+				183E19381D829282000A221B /* LJLivingListController.m */,
 				1868A7E31D76D71900D2CCF9 /* LJLiveViewController.h */,
 				1868A7E41D76D71900D2CCF9 /* LJLiveViewController.m */,
 			);
@@ -1145,6 +1150,7 @@
 				1868A74B1D76D37100D2CCF9 /* LJNavigationController.m in Sources */,
 				1868A7CD1D76D5AA00D2CCF9 /* AFNetworkReachabilityManager.m in Sources */,
 				182447681D7801F000520417 /* UIImage+GIF.m in Sources */,
+				183E19391D829282000A221B /* LJLivingListController.m in Sources */,
 				1868A78D1D76D38E00D2CCF9 /* UIView+MJExtension.m in Sources */,
 				1868A77F1D76D38E00D2CCF9 /* MJRefreshHeader.m in Sources */,
 				1868A7881D76D38E00D2CCF9 /* MJRefreshStateHeader.m in Sources */,

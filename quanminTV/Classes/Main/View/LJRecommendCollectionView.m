@@ -58,6 +58,9 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    if (self.isLivingController) {
+        return 30;
+    }
     return 4;
 }
 
