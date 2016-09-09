@@ -19,7 +19,7 @@
     
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor brownColor];
+        self.backgroundColor = [UIColor whiteColor];
         [self setupSubviews];
     }
     return self;
@@ -51,8 +51,9 @@
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.backgroundColor = [UIColor yellowColor];
+//        _titleLabel.backgroundColor = [UIColor yellowColor];
         _titleLabel.text = @"精彩推荐";
+        _titleLabel.font = themeFont12;
     }
     return _titleLabel;
 }
@@ -61,6 +62,7 @@
     if (!_sectionBtn) {
         _sectionBtn = [[UIButton alloc] init];
         [_sectionBtn setTitle:@"换一换" forState:UIControlStateNormal];
+        [_sectionBtn.titleLabel setFont:themeFont12];
         [_sectionBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     }
     return _sectionBtn;

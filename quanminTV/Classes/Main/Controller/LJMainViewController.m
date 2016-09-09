@@ -12,6 +12,7 @@
 #import "LJGamesCollectionView.h"
 #import "LJColumnListController.h"
 #import "LJMainSectioView.h"
+#import "LJRecommendCell.h"
 @interface LJMainViewController()<UITableViewDataSource, UITableViewDelegate, LJCycleScrollViewDelegate, LJGamesCollectionViewDelegate>
 @property (nonatomic, strong) NSArray *imagesURLStrings;
 @property (nonatomic, strong) UITableView *mainTableView;
@@ -35,6 +36,7 @@
 - (UITableView *)mainTableView {
     if (!_mainTableView) {
         _mainTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+        _mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _mainTableView.dataSource = self;
         _mainTableView.delegate = self;
         [self setupBannerView];
@@ -90,17 +92,16 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 1;
 }
 
-static NSString * const CellId = @"CellId";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellId];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellId];
-    }
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row];
+    LJRecommendCell *cell = [LJRecommendCell cellWithTableView:tableView];
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 260;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -108,7 +109,11 @@ static NSString * const CellId = @"CellId";
     return sectionV;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.001;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 40;
+    return 30;
 }
 @end

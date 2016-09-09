@@ -28,7 +28,8 @@
 - (UIImageView *)iconIV {
     if (!_iconIV) {
         _iconIV = [[UIImageView alloc] init];
-        _iconIV.backgroundColor = [UIColor redColor];
+//        _iconIV.backgroundColor = [UIColor redColor];
+        _iconIV.image = [UIImage circleImageNamed:@"logisticicon"];
     }
     return _iconIV;
 }
@@ -36,7 +37,10 @@
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.backgroundColor = [UIColor blueColor];
+//        _titleLabel.backgroundColor = [UIColor blueColor];
+        _titleLabel.text = @"英雄联盟";
+        _titleLabel.font = themeFont12;
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
     }
     return _titleLabel;
 }
@@ -46,13 +50,13 @@
     CGFloat iconIVX = 0;
     CGFloat iconIVY = 0;
     CGFloat iconIVW = self.width;
-    CGFloat iconIVH = self.height - 20;
+    CGFloat iconIVH = self.height - 30;
     _iconIV.frame = CGRectMake(iconIVX, iconIVY, iconIVW, iconIVH);
     
     CGFloat titleX = 0;
     CGFloat titleY = iconIVH;
     CGFloat titleW = self.width;
-    CGFloat titleH = 20;
+    CGFloat titleH = 30;
     _titleLabel.frame = CGRectMake(titleX, titleY, titleW, titleH);
 }
 
