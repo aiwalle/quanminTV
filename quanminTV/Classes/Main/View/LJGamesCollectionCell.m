@@ -7,7 +7,7 @@
 //
 
 #import "LJGamesCollectionCell.h"
-
+#import "LJMainGamesModel.h"
 @interface LJGamesCollectionCell()
 @property (nonatomic, strong) UIImageView *iconIV;
 @property (nonatomic, strong) UILabel *titleLabel;
@@ -52,12 +52,20 @@
     CGFloat iconIVW = self.width - iconIVX * 2;
     CGFloat iconIVH = self.height - 30;
     _iconIV.frame = CGRectMake(iconIVX, iconIVY, iconIVW, iconIVH);
+    _iconIV.layer.cornerRadius = iconIVH * 0.5;
+    _iconIV.layer.masksToBounds = YES;
     
     CGFloat titleX = 0;
     CGFloat titleH = 30;
     CGFloat titleY = self.height - titleH;
     CGFloat titleW = self.width;
     _titleLabel.frame = CGRectMake(titleX, titleY, titleW, titleH);
+}
+
+- (void)setGamesModel:(LJMainGamesModel *)gamesModel {
+    _gamesModel = gamesModel;
+    _titleLabel.text = gamesModel.title;
+    [_iconIV sd_setImageWithURL:[NSURL URLWithString:gamesModel.thumb] placeholderImage:[UIImage circleImageNamed:@"normal_100"]];
 }
 
 @end

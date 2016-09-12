@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class LJMainGamesModel;
 @interface LJGamesCollectionCell : UICollectionViewCell
+@property (nonatomic, strong) LJMainGamesModel *gamesModel;
 + (instancetype)cellWithCollectionView:(UICollectionView *)collectionView indexPath:(NSIndexPath *)indexPath;
 @end

@@ -84,7 +84,7 @@
 
 #pragma mark - **************** Private
 /** 生成AFHTTPSessionManager单例对象（私有方法）*/
-+ (AFHTTPSessionManager *)manager {
++ (AFHTTPSessionManager *)shareManager {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -104,7 +104,7 @@
 
 /** 请求网络数据*/
 + (NSURLSessionTask *)requestWithUrl:(NSString *)url httpMethod:(NetWorkingRequestType)httpMethod params:(NSDictionary *)params success:(void (^)(NSURLSessionDataTask *task, id responseObject))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure {
-    AFHTTPSessionManager *manager = [self manager];
+    AFHTTPSessionManager *manager = [self shareManager];
     
     NSURLSessionTask *task = nil;
     if (httpMethod == NetWorkingRequestTypeGET) {
@@ -141,7 +141,7 @@
 
 /** 取消网络请求*/
 + (void)cancelAllRequest {
-    [[[self manager] operationQueue] cancelAllOperations];
+    [[[self shareManager] operationQueue] cancelAllOperations];
 }
 
 @end

@@ -18,4 +18,5 @@
 @end
 @interface LJGamesCollectionView : UIView
 @property (nonatomic, weak) id<LJGamesCollectionViewDelegate> delegate;
+@property (nonatomic, strong) NSMutableArray *gamesArr;
 @end

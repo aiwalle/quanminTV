@@ -15,10 +15,16 @@
 #import "LJRecommendCell.h"
 #import "LJRecommendCollectionView.h"
 #import "LJLiveViewController.h"
+
+#import "LJMainListModel.h"
+#import "LJMainGamesModel.h"
 @interface LJMainViewController()<UITableViewDataSource, UITableViewDelegate, LJCycleScrollViewDelegate, LJGamesCollectionViewDelegate, LJRecommendCollectionViewDelegate>
-@property (nonatomic, strong) NSArray *imagesURLStrings;
+@property (nonatomic, strong) LJCycleScrollView *cycleScrollView;
+@property (nonatomic, strong) LJGamesCollectionView *gamesColletionV;
 @property (nonatomic, strong) UITableView *mainTableView;
 @property (nonatomic, strong) UIView *headerContainerV;
+@property (nonatomic, strong) NSMutableArray *mainListArr;
+@property (nonatomic, strong) NSMutableArray *bannerGamesArr;
 @end
 
 @implementation LJMainViewController
@@ -27,6 +33,8 @@
     [super viewDidLoad];
     [self setupTitleLogoView];
     [self.view addSubview:self.mainTableView];
+    
+    [self requestNetWorking];
 }
 
 - (void)setupTitleLogoView {
@@ -48,39 +56,74 @@
     return _mainTableView;
 }
 
+- (void)requestNetWorking {
+    [LJNetWorkingTools GET:@"http://www.quanmin.tv/json/page/appv2-index/info.json?1473646855" params:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        self.mainListArr = [NSMutableArray array];
+        NSArray *listArr = [responseObject objectForKey:@"list"];
+        for (int i = 0; i < listArr.count; i++) {
+            LJMainListModel *listModel = [[LJMainListModel alloc] initWithDictionary:listArr[i]];
+            [self.mainListArr addObject:listModel];
+        }
+        // 获取banner信息
+        [self setupBannerDataWithResponseObject:responseObject];
+        // 获取直播栏目的信息
+        self.bannerGamesArr = [NSMutableArray array];
+        LJMainListModel *gamesModel = [self.mainListArr objectAtIndex:1];
+        NSArray *gamesArr = responseObject[gamesModel.slug];
+        for (NSDictionary *gamesObject in gamesArr) {
+            LJMainGamesModel *gameModel = [[LJMainGamesModel alloc] initWithDictionary:gamesObject];
+            [self.bannerGamesArr addObject:gameModel];
+        }
+        self.gamesColletionV.gamesArr = self.bannerGamesArr;
+        
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+    }];
+}
+
+- (void)setupBannerDataWithResponseObject:(id)responseObject{
+    NSMutableArray *bannerImages = [NSMutableArray array];
+    NSMutableArray *bannerTitles = [NSMutableArray array];
+    LJMainListModel *bannerModel = self.mainListArr.firstObject;
+    NSArray *bannerArr = responseObject[bannerModel.slug];
+    for (NSDictionary *bannerObject in bannerArr) {
+        if ([[bannerObject allKeys] containsObject:@"title"]) {
+            [bannerTitles addObject:[bannerObject objectForKey:@"title"]];
+        }else {
+            [bannerTitles addObject:[[bannerObject objectForKey:@"link_object"] objectForKey:@"title"]];
+        }
+        if ([[bannerObject allKeys] containsObject:@"thumb"]) {
+            [bannerImages addObject:[bannerObject objectForKey:@"thumb"]];
+        }else {
+            [bannerImages addObject:[[bannerObject objectForKey:@"link_object"] objectForKey:@"thumb"]];
+        }
+        //
+        
+    }
+    _cycleScrollView.imageURLStringsGroup = bannerImages;
+    _cycleScrollView.titlesGroup = bannerTitles;
+}
+
 - (void)setupBannerView {
     UIView *headerContainerV = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DeviceWidth, 290)];
     _headerContainerV = headerContainerV;
-    
-    NSArray *imagesURLStrings = @[
-                                  @"https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=a4b3d7085dee3d6d2293d48b252b5910/0e2442a7d933c89524cd5cd4d51373f0830200ea.jpg",
-                                  @"https://ss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=a41eb338dd33c895a62bcb3bb72e47c2/5fdf8db1cb134954a2192ccb524e9258d1094a1e.jpg",
-                                  @"http://c.hiphotos.baidu.com/image/w%3D400/sign=c2318ff84334970a4773112fa5c8d1c0/b7fd5266d0160924c1fae5ccd60735fae7cd340d.jpg"
-                                  ];
-    _imagesURLStrings = imagesURLStrings;
-    
-    NSArray *titles = @[@"我是图片的文字11111 ",
-                        @"我是图片的文字22222",
-                        @"我是图片的文字33333",
-                        @"我是图片的文字44444"
-                        ];
-    
     LJCycleScrollView *cycleScrollView = [LJCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, DeviceWidth, 180) delegate:self placeholderImage:[UIImage imageNamed:@"normal_100"]];
-    cycleScrollView.imageURLStringsGroup = imagesURLStrings;
-    cycleScrollView.titlesGroup = titles;
+    _cycleScrollView = cycleScrollView;
     [_headerContainerV addSubview:cycleScrollView];
 }
 
 - (void)setupGamesCollectionView {
-    LJGamesCollectionView *gamesColletionV = [[LJGamesCollectionView alloc] initWithFrame:CGRectMake(0, 180, DeviceWidth, 90)];
+    LJGamesCollectionView *gamesColletionV = [[LJGamesCollectionView alloc] initWithFrame:CGRectMake(0, 180, DeviceWidth, 80)];
+    _gamesColletionV = gamesColletionV;
     gamesColletionV.delegate = self;
     [_headerContainerV addSubview:gamesColletionV];
     _mainTableView.tableHeaderView = _headerContainerV;
 }
 
+#pragma mark - **************** UICollectionViewDelegate
 - (void)cycleScrollView:(LJCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
     LJBannerViewController *bannerVC = [[LJBannerViewController alloc] init];
-    bannerVC.urlString = _imagesURLStrings[index];
     [self.navigationController pushViewController:bannerVC animated:YES];
 }
 

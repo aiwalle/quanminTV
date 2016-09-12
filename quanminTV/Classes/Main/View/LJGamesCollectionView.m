@@ -55,17 +55,22 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    _flowLayout.itemSize = CGSizeMake(80, 90);
+    _flowLayout.itemSize = CGSizeMake(60, 80);
     _mainView.frame = self.bounds;
 }
 
+- (void)setGamesArr:(NSMutableArray *)gamesArr {
+    _gamesArr = gamesArr;
+    [self.mainView reloadData];
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10;
+    return self.gamesArr.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     LJGamesCollectionCell *cell = [LJGamesCollectionCell cellWithCollectionView:collectionView indexPath:indexPath];
-    
+    cell.gamesModel = self.gamesArr[indexPath.item];
     return cell;
 }
 

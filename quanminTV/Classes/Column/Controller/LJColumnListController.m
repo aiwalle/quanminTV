@@ -41,6 +41,9 @@ static NSString * const CellId = @"ColumnListCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellId forIndexPath:indexPath];
+    UIImageView *imageV = [[UIImageView alloc] initWithFrame:cell.bounds];
+    imageV.image = [UIImage imageNamed:@"app_start_4"];
+    cell.backgroundView = imageV;
     cell.backgroundColor = [UIColor yellowColor];
     
     return cell;

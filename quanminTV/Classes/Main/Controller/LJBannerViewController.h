@@ -9,5 +9,5 @@
 #import "LJBaseUIViewController.h"
 
 @interface LJBannerViewController : LJBaseUIViewController
-@property (nonatomic, copy) NSString *urlString;
+//@property (nonatomic, copy) NSString *urlString;
 @end
