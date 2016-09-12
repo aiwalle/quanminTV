@@ -17,14 +17,18 @@
 #import "LJLiveViewController.h"
 
 #import "LJMainListModel.h"
+#import "LJMainRecommendModel.h"
 #import "LJMainGamesModel.h"
 @interface LJMainViewController()<UITableViewDataSource, UITableViewDelegate, LJCycleScrollViewDelegate, LJGamesCollectionViewDelegate, LJRecommendCollectionViewDelegate>
 @property (nonatomic, strong) LJCycleScrollView *cycleScrollView;
 @property (nonatomic, strong) LJGamesCollectionView *gamesColletionV;
 @property (nonatomic, strong) UITableView *mainTableView;
 @property (nonatomic, strong) UIView *headerContainerV;
+@property (nonatomic, strong) NSMutableDictionary *allDataArr;
 @property (nonatomic, strong) NSMutableArray *mainListArr;
+@property (nonatomic, strong) NSMutableArray *bannerArr;
 @property (nonatomic, strong) NSMutableArray *bannerGamesArr;
+@property (nonatomic, strong) NSMutableArray *recommendLivingArr;
 @end
 
 @implementation LJMainViewController
@@ -58,6 +62,10 @@
 
 - (void)requestNetWorking {
     [LJNetWorkingTools GET:@"http://www.quanmin.tv/json/page/appv2-index/info.json?1473646855" params:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        // 先保存所有的数据
+        self.allDataArr = [NSMutableDictionary dictionary];
+        self.allDataArr = responseObject;
+        // 首页的结构数据
         self.mainListArr = [NSMutableArray array];
         NSArray *listArr = [responseObject objectForKey:@"list"];
         for (int i = 0; i < listArr.count; i++) {
@@ -65,26 +73,30 @@
             [self.mainListArr addObject:listModel];
         }
         // 获取banner信息
-        [self setupBannerDataWithResponseObject:responseObject];
+//        [self setupBannerDataWithResponseObject:responseObject];
         // 获取直播栏目的信息
-        self.bannerGamesArr = [NSMutableArray array];
-        LJMainListModel *gamesModel = [self.mainListArr objectAtIndex:1];
-        NSArray *gamesArr = responseObject[gamesModel.slug];
-        for (NSDictionary *gamesObject in gamesArr) {
-            LJMainGamesModel *gameModel = [[LJMainGamesModel alloc] initWithDictionary:gamesObject];
-            [self.bannerGamesArr addObject:gameModel];
-        }
-        self.gamesColletionV.gamesArr = self.bannerGamesArr;
-        
-        
+//        [self setupBannerGamesWithResponseObject:responseObject];
+        [self.mainTableView reloadData];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
     }];
 }
 
+- (void)setupBannerGamesWithResponseObject:(id)responseObject {
+    self.bannerGamesArr = [NSMutableArray array];
+    LJMainListModel *gamesModel = [self.mainListArr objectAtIndex:1];
+    NSArray *gamesArr = responseObject[gamesModel.slug];
+    for (NSDictionary *gamesObject in gamesArr) {
+        LJMainGamesModel *gameModel = [[LJMainGamesModel alloc] initWithDictionary:gamesObject];
+        [self.bannerGamesArr addObject:gameModel];
+    }
+    self.gamesColletionV.gamesArr = self.bannerGamesArr;
+}
+
 - (void)setupBannerDataWithResponseObject:(id)responseObject{
     NSMutableArray *bannerImages = [NSMutableArray array];
     NSMutableArray *bannerTitles = [NSMutableArray array];
+    self.bannerArr = [NSMutableArray array];
     LJMainListModel *bannerModel = self.mainListArr.firstObject;
     NSArray *bannerArr = responseObject[bannerModel.slug];
     for (NSDictionary *bannerObject in bannerArr) {
@@ -98,8 +110,8 @@
         }else {
             [bannerImages addObject:[[bannerObject objectForKey:@"link_object"] objectForKey:@"thumb"]];
         }
-        //
-        
+        LJMainRecommendModel *bannerModel = [[LJMainRecommendModel alloc] initWithDictionary:bannerObject];
+        [self.bannerArr addObject:bannerModel];
     }
     _cycleScrollView.imageURLStringsGroup = bannerImages;
     _cycleScrollView.titlesGroup = bannerTitles;
@@ -139,7 +151,7 @@
 
 #pragma mark - **************** UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 5;
+    return self.mainListArr.count ? self.mainListArr.count - 3 : 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -149,6 +161,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LJRecommendCell *cell = [LJRecommendCell cellWithTableView:tableView];
     cell.recommendCollevtionV.delegate = self;
+    LJMainListModel *listModel = self.mainListArr[indexPath.section + 2];
+    NSMutableArray *recommendArr = self.allDataArr[listModel.slug];
+    cell.recommendCollevtionV.recommendArr = recommendArr;
     return cell;
 }
 

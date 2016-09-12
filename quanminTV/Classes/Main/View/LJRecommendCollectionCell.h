@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class LJMainRecommendModel;
 @interface LJRecommendCollectionCell : UICollectionViewCell
+@property (nonatomic, strong) LJMainRecommendModel *recommendModel;
 + (instancetype)cellWithCollectionView:(UICollectionView *)collectionView indexPath:(NSIndexPath *)indexPath;
 @end

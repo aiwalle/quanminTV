@@ -7,7 +7,8 @@
 //
 
 #import "LJRecommendCollectionCell.h"
-
+#import "LJMainRecommendModel.h"
+#import "LJMainLinkObject.h"
 @interface LJRecommendCollectionCell()
 @property (nonatomic, strong) UIImageView *itemImageView;
 @property (nonatomic, strong) UILabel *peopleCountLabel;
@@ -88,6 +89,8 @@
     CGFloat itemImageW = self.width;
     CGFloat itemImageH = self.height * 2 / 3;
     _itemImageView.frame = CGRectMake(itemImageX, itemImageY, itemImageW, itemImageH);
+    _iconImageView.layer.cornerRadius = 5;
+    _iconImageView.layer.masksToBounds = YES;
     
     CGFloat countX = 10;
     CGFloat countH = 20;
@@ -100,7 +103,8 @@
     CGFloat iconImageW = 30;
     CGFloat iconImageH = iconImageW;
     _iconImageView.frame = CGRectMake(iconImageX, iconImageY, iconImageW, iconImageH);
-    
+    _iconImageView.layer.cornerRadius = iconImageH * 0.5;
+    _iconImageView.layer.masksToBounds = YES;
     
     CGFloat nameX = iconImageW + 10;
     CGFloat nameY = iconImageY;
@@ -113,5 +117,20 @@
     CGFloat signW = nameW;
     CGFloat signH = 13;
     _signLabel.frame = CGRectMake(signX, signY, signW, signH);
+}
+
+- (void)setRecommendModel:(LJMainRecommendModel *)recommendModel {
+    _recommendModel = recommendModel;
+    [_itemImageView sd_setImageWithURL:[NSURL URLWithString:recommendModel.linkObject.thumb] placeholderImage:[UIImage imageNamed:@"normal_100"]];
+    if ([recommendModel.linkObject.view integerValue] > 9999) {
+        _peopleCountLabel.text = [NSString stringWithFormat:@"%.1f万人", [recommendModel.linkObject.view floatValue] / 10000];
+    }else {
+        _peopleCountLabel.text = [NSString stringWithFormat:@"%d人", [recommendModel.linkObject.view intValue]];
+    }
+    
+    [_iconImageView sd_setImageWithURL:[NSURL URLWithString:recommendModel.linkObject.avatar] placeholderImage:[UIImage imageNamed:@"normal_100"]];
+    
+    _nameLabel.text = recommendModel.linkObject.nick;
+    _signLabel.text = recommendModel.title;
 }
 @end

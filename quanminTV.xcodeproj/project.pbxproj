@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		18122A061D86420900EFD3E7 /* app_start_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 18122A051D86420900EFD3E7 /* app_start_4.png */; };
 		18122A0D1D864D2300EFD3E7 /* LJMainListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18122A0C1D864D2300EFD3E7 /* LJMainListModel.m */; };
-		18122A101D86558200EFD3E7 /* LJMainBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18122A0F1D86558200EFD3E7 /* LJMainBannerModel.m */; };
 		18122A161D867CE800EFD3E7 /* LJMainExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 18122A121D867CE800EFD3E7 /* LJMainExt.m */; };
 		18122A191D867F3100EFD3E7 /* LJMainGamesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18122A181D867F3100EFD3E7 /* LJMainGamesModel.m */; };
+		18122A1D1D868C8600EFD3E7 /* LJMainRecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18122A1C1D868C8600EFD3E7 /* LJMainRecommendModel.m */; };
+		18122A201D868C8E00EFD3E7 /* LJMainLinkObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 18122A1E1D868C8E00EFD3E7 /* LJMainLinkObject.m */; };
 		181A056A1D7919550052D3A3 /* LJGamesCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181A05691D7919550052D3A3 /* LJGamesCollectionView.m */; };
 		181A056E1D7946C20052D3A3 /* LJGamesCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 181A056D1D7946C20052D3A3 /* LJGamesCollectionCell.m */; };
 		181A05711D794CF90052D3A3 /* LJColumnListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181A05701D794CF90052D3A3 /* LJColumnListController.m */; };
@@ -154,12 +155,14 @@
 		18122A051D86420900EFD3E7 /* app_start_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_start_4.png; sourceTree = "<group>"; };
 		18122A0B1D864D2300EFD3E7 /* LJMainListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJMainListModel.h; sourceTree = "<group>"; };
 		18122A0C1D864D2300EFD3E7 /* LJMainListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJMainListModel.m; sourceTree = "<group>"; };
-		18122A0E1D86558200EFD3E7 /* LJMainBannerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJMainBannerModel.h; sourceTree = "<group>"; };
-		18122A0F1D86558200EFD3E7 /* LJMainBannerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJMainBannerModel.m; sourceTree = "<group>"; };
 		18122A121D867CE800EFD3E7 /* LJMainExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJMainExt.m; sourceTree = "<group>"; };
 		18122A131D867CE800EFD3E7 /* LJMainExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJMainExt.h; sourceTree = "<group>"; };
 		18122A171D867F2B00EFD3E7 /* LJMainGamesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJMainGamesModel.h; sourceTree = "<group>"; };
 		18122A181D867F3100EFD3E7 /* LJMainGamesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJMainGamesModel.m; sourceTree = "<group>"; };
+		18122A1B1D868C8600EFD3E7 /* LJMainRecommendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJMainRecommendModel.h; sourceTree = "<group>"; };
+		18122A1C1D868C8600EFD3E7 /* LJMainRecommendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJMainRecommendModel.m; sourceTree = "<group>"; };
+		18122A1E1D868C8E00EFD3E7 /* LJMainLinkObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJMainLinkObject.m; sourceTree = "<group>"; };
+		18122A1F1D868C8E00EFD3E7 /* LJMainLinkObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJMainLinkObject.h; sourceTree = "<group>"; };
 		181A05681D7919550052D3A3 /* LJGamesCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJGamesCollectionView.h; sourceTree = "<group>"; };
 		181A05691D7919550052D3A3 /* LJGamesCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJGamesCollectionView.m; sourceTree = "<group>"; };
 		181A056C1D7946C20052D3A3 /* LJGamesCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJGamesCollectionCell.h; sourceTree = "<group>"; };
@@ -686,8 +689,10 @@
 			children = (
 				18122A0B1D864D2300EFD3E7 /* LJMainListModel.h */,
 				18122A0C1D864D2300EFD3E7 /* LJMainListModel.m */,
-				18122A0E1D86558200EFD3E7 /* LJMainBannerModel.h */,
-				18122A0F1D86558200EFD3E7 /* LJMainBannerModel.m */,
+				18122A1B1D868C8600EFD3E7 /* LJMainRecommendModel.h */,
+				18122A1C1D868C8600EFD3E7 /* LJMainRecommendModel.m */,
+				18122A1F1D868C8E00EFD3E7 /* LJMainLinkObject.h */,
+				18122A1E1D868C8E00EFD3E7 /* LJMainLinkObject.m */,
 				18122A171D867F2B00EFD3E7 /* LJMainGamesModel.h */,
 				18122A181D867F3100EFD3E7 /* LJMainGamesModel.m */,
 				18122A131D867CE800EFD3E7 /* LJMainExt.h */,
@@ -1132,6 +1137,7 @@
 				1824475F1D7801F000520417 /* NSData+ImageContentType.m in Sources */,
 				1868A7D21D76D5AA00D2CCF9 /* AFURLSessionManager.m in Sources */,
 				1868A7801D76D38E00D2CCF9 /* MJRefreshAutoGifFooter.m in Sources */,
+				18122A201D868C8E00EFD3E7 /* LJMainLinkObject.m in Sources */,
 				1868A7CC1D76D5AA00D2CCF9 /* AFHTTPSessionManager.m in Sources */,
 				181A05831D797E930052D3A3 /* LJRecommendCell.m in Sources */,
 				182447731D781D8400520417 /* LJBannerViewController.m in Sources */,
@@ -1142,6 +1148,7 @@
 				1868A7DF1D76D6E800D2CCF9 /* LJMainViewController.m in Sources */,
 				1868A7CA1D76D5AA00D2CCF9 /* AFHTTPRequestOperation.m in Sources */,
 				182447661D7801F000520417 /* SDWebImagePrefetcher.m in Sources */,
+				18122A1D1D868C8600EFD3E7 /* LJMainRecommendModel.m in Sources */,
 				1868A7871D76D38E00D2CCF9 /* MJRefreshNormalHeader.m in Sources */,
 				182447611D7801F000520417 /* SDWebImageCompat.m in Sources */,
 				1868A7D01D76D5AA00D2CCF9 /* AFURLRequestSerialization.m in Sources */,
@@ -1157,7 +1164,6 @@
 				1868A7841D76D38E00D2CCF9 /* MJRefreshBackNormalFooter.m in Sources */,
 				182447901D78210000520417 /* UISplitViewController+MemoryLeak.m in Sources */,
 				1868A7D81D76D5AA00D2CCF9 /* UIImageView+AFNetworking.m in Sources */,
-				18122A101D86558200EFD3E7 /* LJMainBannerModel.m in Sources */,
 				182447621D7801F000520417 /* SDWebImageDecoder.m in Sources */,
 				182447331D77D77C00520417 /* LJCycleScrollView.m in Sources */,
 				1868A78A1D76D38E00D2CCF9 /* MJRefreshConst.m in Sources */,

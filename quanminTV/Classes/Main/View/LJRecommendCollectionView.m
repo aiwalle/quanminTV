@@ -8,6 +8,7 @@
 
 #import "LJRecommendCollectionView.h"
 #import "LJRecommendCollectionCell.h"
+#import "LJMainRecommendModel.h"
 @interface LJRecommendCollectionView()<UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic, weak) UICollectionView *mainView;
 @property (nonatomic, weak) UICollectionViewFlowLayout *flowLayout;
@@ -56,16 +57,22 @@
     _mainView.frame = self.bounds;
 }
 
+- (void)setRecommendArr:(NSMutableArray *)recommendArr {
+    _recommendArr = recommendArr;
+    [self.mainView reloadData];
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     if (self.isLivingController) {
         return 30;
     }
-    return 4;
+    return self.recommendArr.count > 3 ? 4 : self.recommendArr.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     LJRecommendCollectionCell *cell = [LJRecommendCollectionCell cellWithCollectionView:collectionView indexPath:indexPath];
-    
+    LJMainRecommendModel *recommendModel = [[LJMainRecommendModel alloc] initWithDictionary:self.recommendArr[indexPath.item]];
+    cell.recommendModel = recommendModel;
     return cell;
 }
 

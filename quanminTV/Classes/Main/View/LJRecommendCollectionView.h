@@ -17,4 +17,5 @@
 @interface LJRecommendCollectionView : UIView
 @property (nonatomic, weak) id<LJRecommendCollectionViewDelegate> delegate;
 @property (nonatomic, assign) BOOL isLivingController;
+@property (nonatomic, strong) NSMutableArray *recommendArr;
 @end
