@@ -18,6 +18,7 @@
 @property (nonatomic, strong) LJLiveAnchorView *middleAnchorView;
 @property (nonatomic, strong) LJLiveChatView *bottomChatView;
 @property (nonatomic, strong) LJLiveTextView *liveTextView;
+@property (nonatomic, strong) NSMutableDictionary *liveInfoDic;
 @end
 
 @implementation LJLiveViewController
@@ -25,11 +26,14 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-//    [self setupVideoPlayer];
+
     
 //    [self requsetRoomInfo];
     
     [self setupSubviews];
+    [self setupVideoPlayer];
+    
+    
 }
 
 - (void)setupSubviews {
@@ -56,14 +60,19 @@
     IJKFFMoviePlayerController *playerVc = [[IJKFFMoviePlayerController alloc] initWithContentURL:url withOptions:nil];
     [playerVc prepareToPlay];
     _player = playerVc;
-    playerVc.view.frame = DeviceRect;
-    [self.view addSubview:playerVc.view];
+    playerVc.view.frame = _topVedioView.frame;
+    [_topVedioView addSubview:playerVc.view];
+}
+
+- (void)setupViewsData {
+    
 }
 
 - (void)requsetRoomInfo {
     NSString *url = [NSString stringWithFormat:@"http://www.quanmin.tv/json/rooms/%@/info.json?1473746509", self.linkObject.uid];
     [LJNetWorkingTools GET:url params:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        
+        self.liveInfoDic = [NSMutableDictionary dictionary];
+        [self setupViewsData];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
     }];
