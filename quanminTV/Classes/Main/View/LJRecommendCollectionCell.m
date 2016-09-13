@@ -7,7 +7,6 @@
 //
 
 #import "LJRecommendCollectionCell.h"
-#import "LJMainRecommendModel.h"
 #import "LJMainLinkObject.h"
 @interface LJRecommendCollectionCell()
 @property (nonatomic, strong) UIImageView *itemImageView;
@@ -89,8 +88,8 @@
     CGFloat itemImageW = self.width;
     CGFloat itemImageH = self.height * 2 / 3;
     _itemImageView.frame = CGRectMake(itemImageX, itemImageY, itemImageW, itemImageH);
-    _iconImageView.layer.cornerRadius = 5;
-    _iconImageView.layer.masksToBounds = YES;
+    _itemImageView.layer.cornerRadius = 5;
+    _itemImageView.layer.masksToBounds = YES;
     
     CGFloat countX = 10;
     CGFloat countH = 20;
@@ -119,18 +118,18 @@
     _signLabel.frame = CGRectMake(signX, signY, signW, signH);
 }
 
-- (void)setRecommendModel:(LJMainRecommendModel *)recommendModel {
-    _recommendModel = recommendModel;
-    [_itemImageView sd_setImageWithURL:[NSURL URLWithString:recommendModel.linkObject.thumb] placeholderImage:[UIImage imageNamed:@"normal_100"]];
-    if ([recommendModel.linkObject.view integerValue] > 9999) {
-        _peopleCountLabel.text = [NSString stringWithFormat:@"%.1f万人", [recommendModel.linkObject.view floatValue] / 10000];
+- (void)setLinkObject:(LJMainLinkObject *)linkObject {
+    _linkObject = linkObject;
+    [_itemImageView sd_setImageWithURL:[NSURL URLWithString:linkObject.thumb] placeholderImage:[UIImage imageNamed:@"normal_100"]];
+    if ([linkObject.view integerValue] > 9999) {
+        _peopleCountLabel.text = [NSString stringWithFormat:@"%.1f万人", [linkObject.view floatValue] / 10000];
     }else {
-        _peopleCountLabel.text = [NSString stringWithFormat:@"%d人", [recommendModel.linkObject.view intValue]];
+        _peopleCountLabel.text = [NSString stringWithFormat:@"%d人", [linkObject.view intValue]];
     }
     
-    [_iconImageView sd_setImageWithURL:[NSURL URLWithString:recommendModel.linkObject.avatar] placeholderImage:[UIImage imageNamed:@"normal_100"]];
+    [_iconImageView sd_setImageWithURL:[NSURL URLWithString:linkObject.avatar] placeholderImage:[UIImage imageNamed:@"normal_100"]];
     
-    _nameLabel.text = recommendModel.linkObject.nick;
-    _signLabel.text = recommendModel.title;
+    _nameLabel.text = linkObject.nick;
+    _signLabel.text = linkObject.title;
 }
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "LJMainSectioView.h"
-
+#import "LJMainListModel.h"
 @interface LJMainSectioView()
 @property (nonatomic, strong) UIView *redView;
 @property (nonatomic, strong) UILabel *titleLabel;
@@ -61,9 +61,11 @@
 - (UIButton *)sectionBtn {
     if (!_sectionBtn) {
         _sectionBtn = [[UIButton alloc] init];
-        [_sectionBtn setTitle:@"换一换" forState:UIControlStateNormal];
+        [_sectionBtn setTitle:@"瞅瞅" forState:UIControlStateNormal];
         [_sectionBtn.titleLabel setFont:themeFont12];
         [_sectionBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_sectionBtn setImage:[UIImage imageNamed:@"refresh"] forState:UIControlStateNormal];
+        [_sectionBtn addTarget:self action:@selector(sectionBtnClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _sectionBtn;
 }
@@ -87,6 +89,16 @@
     CGFloat sectionBtnW = 80;
     CGFloat sectionBtnH = self.height;
     _sectionBtn.frame = CGRectMake(sectionBtnX, sectionBtnY, sectionBtnW, sectionBtnH);
+    _sectionBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 20, 0, -20);
+    _sectionBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 20);
 }
 
+- (void)sectionBtnClick {
+    
+}
+
+- (void)setListModel:(LJMainListModel *)listModel {
+    _listModel = listModel;
+    _titleLabel.text = listModel.name;
+}
 @end

@@ -8,7 +8,7 @@
 
 #import "LJRecommendCollectionView.h"
 #import "LJRecommendCollectionCell.h"
-#import "LJMainRecommendModel.h"
+#import "LJMainLinkObject.h"
 @interface LJRecommendCollectionView()<UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic, weak) UICollectionView *mainView;
 @property (nonatomic, weak) UICollectionViewFlowLayout *flowLayout;
@@ -71,8 +71,9 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     LJRecommendCollectionCell *cell = [LJRecommendCollectionCell cellWithCollectionView:collectionView indexPath:indexPath];
-    LJMainRecommendModel *recommendModel = [[LJMainRecommendModel alloc] initWithDictionary:self.recommendArr[indexPath.item]];
-    cell.recommendModel = recommendModel;
+    NSDictionary *linkDic = [self.recommendArr[indexPath.item] valueForKey:@"link_object"];
+    LJMainLinkObject *linkObject = [[LJMainLinkObject alloc] initWithDictionary:linkDic];
+//    cell.linkObject = linkObject;
     return cell;
 }
 

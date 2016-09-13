@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class LJMainListModel;
 @interface LJMainSectioView : UIView
-
+@property (nonatomic, strong) LJMainListModel *listModel;
 @end

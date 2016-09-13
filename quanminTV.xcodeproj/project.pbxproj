@@ -62,6 +62,9 @@
 		183E19351D82877B000A221B /* logisticicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 183E19331D82877B000A221B /* logisticicon@2x.png */; };
 		183E19361D82877B000A221B /* logisticicon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 183E19341D82877B000A221B /* logisticicon@3x.png */; };
 		183E19391D829282000A221B /* LJLivingListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E19381D829282000A221B /* LJLivingListController.m */; };
+		185831911D879730003C6A37 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 1858318E1D879730003C6A37 /* refresh.png */; };
+		185831921D879730003C6A37 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1858318F1D879730003C6A37 /* refresh@2x.png */; };
+		185831931D879730003C6A37 /* refresh@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 185831901D879730003C6A37 /* refresh@3x.png */; };
 		1868A6F51D76A9E800D2CCF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1868A6F41D76A9E800D2CCF9 /* Assets.xcassets */; };
 		1868A6F81D76A9E800D2CCF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1868A6F61D76A9E800D2CCF9 /* LaunchScreen.storyboard */; };
 		1868A7011D76AA7000D2CCF9 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1868A7001D76AA7000D2CCF9 /* IJKMediaFramework.framework */; };
@@ -253,6 +256,9 @@
 		183E19341D82877B000A221B /* logisticicon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logisticicon@3x.png"; sourceTree = "<group>"; };
 		183E19371D829282000A221B /* LJLivingListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJLivingListController.h; sourceTree = "<group>"; };
 		183E19381D829282000A221B /* LJLivingListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJLivingListController.m; sourceTree = "<group>"; };
+		1858318E1D879730003C6A37 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
+		1858318F1D879730003C6A37 /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
+		185831901D879730003C6A37 /* refresh@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@3x.png"; sourceTree = "<group>"; };
 		1868A6E51D76A9E800D2CCF9 /* quanminTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quanminTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1868A6F41D76A9E800D2CCF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1868A6F71D76A9E800D2CCF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -485,6 +491,9 @@
 		1824476E1D78136200520417 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				1858318E1D879730003C6A37 /* refresh.png */,
+				1858318F1D879730003C6A37 /* refresh@2x.png */,
+				185831901D879730003C6A37 /* refresh@3x.png */,
 				18122A051D86420900EFD3E7 /* app_start_4.png */,
 				183E19331D82877B000A221B /* logisticicon@2x.png */,
 				183E19341D82877B000A221B /* logisticicon@3x.png */,
@@ -1087,9 +1096,11 @@
 				1868A8151D76DAA300D2CCF9 /* mine@2x.png in Resources */,
 				182447281D77CD6500520417 /* live_sel@3x.png in Resources */,
 				1868A8101D76DAA300D2CCF9 /* main@3x.png in Resources */,
+				185831921D879730003C6A37 /* refresh@2x.png in Resources */,
 				1868A8181D76DAA300D2CCF9 /* mine_sel@2x.png in Resources */,
 				182447951D78271E00520417 /* normal_100@2x.png in Resources */,
 				182447301D77CF6E00520417 /* nav_image@3x.png in Resources */,
+				185831931D879730003C6A37 /* refresh@3x.png in Resources */,
 				1868A8161D76DAA300D2CCF9 /* mine@3x.png in Resources */,
 				1868A6F81D76A9E800D2CCF9 /* LaunchScreen.storyboard in Resources */,
 				1868A74A1D76D37100D2CCF9 /* EmptyDataView.xib in Resources */,
@@ -1097,6 +1108,7 @@
 				1868A80E1D76DAA300D2CCF9 /* main.png in Resources */,
 				1868A80F1D76DAA300D2CCF9 /* main@2x.png in Resources */,
 				1868A7891D76D38E00D2CCF9 /* MJRefresh.bundle in Resources */,
+				185831911D879730003C6A37 /* refresh.png in Resources */,
 				183E19351D82877B000A221B /* logisticicon@2x.png in Resources */,
 				18122A061D86420900EFD3E7 /* app_start_4.png in Resources */,
 				1868A8021D76DAA300D2CCF9 /* column.png in Resources */,

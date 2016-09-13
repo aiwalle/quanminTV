@@ -173,6 +173,8 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     LJMainSectioView *sectionV = [[LJMainSectioView alloc] initWithFrame:CGRectMake(0, 0, DeviceWidth, 20)];
+    LJMainListModel *listModel = self.mainListArr[section + 2];
+    sectionV.listModel = listModel;
     return sectionV;
 }
 
