@@ -144,8 +144,9 @@
     [self.navigationController pushViewController:columnVC animated:YES];
 }
 
-- (void)recommendCollectionView:(LJRecommendCollectionView *)recommendCollectionView didSelectItemAtIndex:(NSInteger)index {
+- (void)recommendCollectionView:(LJRecommendCollectionView *)recommendCollectionView didSelectItemAtIndex:(NSInteger)index WithLinkObject:(LJMainLinkObject *)linkObject{
     LJLiveViewController *liveVC = [[LJLiveViewController alloc] init];
+    liveVC.linkObject = linkObject;
     [self.navigationController pushViewController:liveVC animated:YES];
 }
 

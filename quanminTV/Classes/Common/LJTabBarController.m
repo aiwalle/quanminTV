@@ -65,7 +65,7 @@
  */
 - (void)setupChildVc:(UIViewController *)vc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage
 {
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    LJNavigationController *nav = [[LJNavigationController alloc] initWithRootViewController:vc];
     [self addChildViewController:nav];
     
     nav.tabBarItem.title = title;

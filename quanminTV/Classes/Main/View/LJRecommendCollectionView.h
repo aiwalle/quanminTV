@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-@class LJRecommendCollectionView;
+@class LJRecommendCollectionView, LJMainLinkObject;
 @protocol LJRecommendCollectionViewDelegate <NSObject>
 @optional
-- (void)recommendCollectionView:(LJRecommendCollectionView *)recommendCollectionView didSelectItemAtIndex:(NSInteger)index;
+- (void)recommendCollectionView:(LJRecommendCollectionView *)recommendCollectionView didSelectItemAtIndex:(NSInteger)index WithLinkObject:(LJMainLinkObject *)linkObject;
 
 @end
 

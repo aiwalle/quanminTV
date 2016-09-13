@@ -78,8 +78,10 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    if ([self.delegate respondsToSelector:@selector(recommendCollectionView:didSelectItemAtIndex:)]) {
-        [self.delegate recommendCollectionView:self didSelectItemAtIndex:indexPath.item];
+    if ([self.delegate respondsToSelector:@selector(recommendCollectionView:didSelectItemAtIndex:WithLinkObject:)]) {
+        NSDictionary *linkDic = [self.recommendArr[indexPath.item] valueForKey:@"link_object"];
+        LJMainLinkObject *linkObject = [[LJMainLinkObject alloc] initWithDictionary:linkDic];
+        [self.delegate recommendCollectionView:self didSelectItemAtIndex:indexPath.item WithLinkObject:linkObject];
     }
 }
 @end

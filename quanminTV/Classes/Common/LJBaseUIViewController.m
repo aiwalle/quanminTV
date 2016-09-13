@@ -21,7 +21,6 @@
 #pragma mark - **************** UI方面的设定
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self setupCurrentViewControllerManager];
 //    [self setupTitleData];
 //    [self setupTitleView];

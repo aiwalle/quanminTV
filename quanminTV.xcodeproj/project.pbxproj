@@ -65,6 +65,10 @@
 		185831911D879730003C6A37 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 1858318E1D879730003C6A37 /* refresh.png */; };
 		185831921D879730003C6A37 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1858318F1D879730003C6A37 /* refresh@2x.png */; };
 		185831931D879730003C6A37 /* refresh@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 185831901D879730003C6A37 /* refresh@3x.png */; };
+		1858319C1D87DE0E003C6A37 /* LJLiveTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1858319B1D87DE0E003C6A37 /* LJLiveTextView.m */; };
+		185831A31D87E476003C6A37 /* LJLiveChatSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 185831A21D87E476003C6A37 /* LJLiveChatSectionView.m */; };
+		185831A61D87E773003C6A37 /* LJLiveChatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 185831A51D87E773003C6A37 /* LJLiveChatView.m */; };
+		185831A91D87EE6B003C6A37 /* LJLiveAnchorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 185831A81D87EE6B003C6A37 /* LJLiveAnchorView.m */; };
 		1868A6F51D76A9E800D2CCF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1868A6F41D76A9E800D2CCF9 /* Assets.xcassets */; };
 		1868A6F81D76A9E800D2CCF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1868A6F61D76A9E800D2CCF9 /* LaunchScreen.storyboard */; };
 		1868A7011D76AA7000D2CCF9 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1868A7001D76AA7000D2CCF9 /* IJKMediaFramework.framework */; };
@@ -259,6 +263,14 @@
 		1858318E1D879730003C6A37 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		1858318F1D879730003C6A37 /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
 		185831901D879730003C6A37 /* refresh@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@3x.png"; sourceTree = "<group>"; };
+		1858319A1D87DE0E003C6A37 /* LJLiveTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJLiveTextView.h; sourceTree = "<group>"; };
+		1858319B1D87DE0E003C6A37 /* LJLiveTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJLiveTextView.m; sourceTree = "<group>"; };
+		185831A11D87E476003C6A37 /* LJLiveChatSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJLiveChatSectionView.h; sourceTree = "<group>"; };
+		185831A21D87E476003C6A37 /* LJLiveChatSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJLiveChatSectionView.m; sourceTree = "<group>"; };
+		185831A41D87E773003C6A37 /* LJLiveChatView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJLiveChatView.h; sourceTree = "<group>"; };
+		185831A51D87E773003C6A37 /* LJLiveChatView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJLiveChatView.m; sourceTree = "<group>"; };
+		185831A71D87EE6B003C6A37 /* LJLiveAnchorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJLiveAnchorView.h; sourceTree = "<group>"; };
+		185831A81D87EE6B003C6A37 /* LJLiveAnchorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJLiveAnchorView.m; sourceTree = "<group>"; };
 		1868A6E51D76A9E800D2CCF9 /* quanminTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quanminTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1868A6F41D76A9E800D2CCF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1868A6F71D76A9E800D2CCF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -668,6 +680,14 @@
 		1868A7231D76D1BB00D2CCF9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1858319A1D87DE0E003C6A37 /* LJLiveTextView.h */,
+				1858319B1D87DE0E003C6A37 /* LJLiveTextView.m */,
+				185831A11D87E476003C6A37 /* LJLiveChatSectionView.h */,
+				185831A21D87E476003C6A37 /* LJLiveChatSectionView.m */,
+				185831A41D87E773003C6A37 /* LJLiveChatView.h */,
+				185831A51D87E773003C6A37 /* LJLiveChatView.m */,
+				185831A71D87EE6B003C6A37 /* LJLiveAnchorView.h */,
+				185831A81D87EE6B003C6A37 /* LJLiveAnchorView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1177,6 +1197,7 @@
 				182447901D78210000520417 /* UISplitViewController+MemoryLeak.m in Sources */,
 				1868A7D81D76D5AA00D2CCF9 /* UIImageView+AFNetworking.m in Sources */,
 				182447621D7801F000520417 /* SDWebImageDecoder.m in Sources */,
+				185831A61D87E773003C6A37 /* LJLiveChatView.m in Sources */,
 				182447331D77D77C00520417 /* LJCycleScrollView.m in Sources */,
 				1868A78A1D76D38E00D2CCF9 /* MJRefreshConst.m in Sources */,
 				1868A7811D76D38E00D2CCF9 /* MJRefreshAutoNormalFooter.m in Sources */,
@@ -1195,11 +1216,14 @@
 				1868A7CD1D76D5AA00D2CCF9 /* AFNetworkReachabilityManager.m in Sources */,
 				182447681D7801F000520417 /* UIImage+GIF.m in Sources */,
 				183E19391D829282000A221B /* LJLivingListController.m in Sources */,
+				1858319C1D87DE0E003C6A37 /* LJLiveTextView.m in Sources */,
 				1868A78D1D76D38E00D2CCF9 /* UIView+MJExtension.m in Sources */,
 				1868A77F1D76D38E00D2CCF9 /* MJRefreshHeader.m in Sources */,
 				1868A7881D76D38E00D2CCF9 /* MJRefreshStateHeader.m in Sources */,
 				1868A7CF1D76D5AA00D2CCF9 /* AFURLConnectionOperation.m in Sources */,
 				1824478D1D78210000520417 /* UIApplication+MemoryLeak.m in Sources */,
+				185831A91D87EE6B003C6A37 /* LJLiveAnchorView.m in Sources */,
+				185831A31D87E476003C6A37 /* LJLiveChatSectionView.m in Sources */,
 				1868A77C1D76D38E00D2CCF9 /* MJRefreshBackFooter.m in Sources */,
 				181A057A1D795A5F0052D3A3 /* LJMainSectioView.m in Sources */,
 				18122A161D867CE800EFD3E7 /* LJMainExt.m in Sources */,

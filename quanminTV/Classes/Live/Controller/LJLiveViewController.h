@@ -7,7 +7,7 @@
 //
 
 #import "LJBaseUIViewController.h"
-
+@class LJMainLinkObject;
 @interface LJLiveViewController : LJBaseUIViewController
-
+@property (nonatomic, strong) LJMainLinkObject *linkObject;
 @end
