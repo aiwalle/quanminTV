@@ -44,7 +44,6 @@
     [self.view addSubview:_bottomChatView];
     
     _liveTextView = [[LJLiveTextView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_bottomChatView.frame), DeviceWidth, 50)];
-    _liveTextView.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:_liveTextView];
 }
 
@@ -53,7 +52,7 @@
     [LJNetWorkingTools GET:url params:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         
 //        [self setupVideoPlayerWithResponseObject:responseObject];
-        [self setupViewsDataWithResponseObject:responseObject];
+//        [self setupViewsDataWithResponseObject:responseObject];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
     }];

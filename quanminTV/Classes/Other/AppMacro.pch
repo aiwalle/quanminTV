@@ -15,6 +15,7 @@
 #import "UIView+YYAdd.h"
 #import "UIImageView+WebCache.h"
 #import "UIImage+LJExtension.h"
+#import "UIViewController+LJExtension.h"
 //#import "NSString+Common.h"
 //#import "UIColor+Common.h"
 //#import "MBProgressHUD+Show.h"

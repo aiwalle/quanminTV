@@ -68,7 +68,7 @@
     [self addSubview:_switchBottomLabel];
     
     _lineView = [[UIView alloc] init];
-    _lineView.backgroundColor = [UIColor lightGrayColor];
+    _lineView.backgroundColor = [UIColor colorWithRed:0.780 green:0.780 blue:0.780 alpha:1.00];
     [self addSubview:_lineView];
 }
 
@@ -116,7 +116,7 @@
     _likeBtn.frame = CGRectMake(likeBtnX, likeBtnY, likeBtnW, likeBtnH);
     
     CGFloat lineX = 0;
-    CGFloat lineH = 0.3;
+    CGFloat lineH = 1;
     CGFloat lineY = self.height - lineH;
     CGFloat lineW = self.width;
     _lineView.frame = CGRectMake(lineX, lineY, lineW, lineH);

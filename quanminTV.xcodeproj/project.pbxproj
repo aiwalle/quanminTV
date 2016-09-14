@@ -159,6 +159,9 @@
 		18F50D851D89337F00E8F08A /* focus.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F50D821D89337F00E8F08A /* focus.png */; };
 		18F50D861D89337F00E8F08A /* focus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F50D831D89337F00E8F08A /* focus@2x.png */; };
 		18F50D871D89337F00E8F08A /* focus@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F50D841D89337F00E8F08A /* focus@3x.png */; };
+		18F50D8B1D894A6B00E8F08A /* LJADLaunchObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F50D8A1D894A6B00E8F08A /* LJADLaunchObject.m */; };
+		18F50D8E1D894B0300E8F08A /* UIViewController+LJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F50D8D1D894B0300E8F08A /* UIViewController+LJExtension.m */; };
+		18F50D911D894BBC00E8F08A /* LJADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F50D901D894BBC00E8F08A /* LJADViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -418,6 +421,12 @@
 		18F50D821D89337F00E8F08A /* focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = focus.png; sourceTree = "<group>"; };
 		18F50D831D89337F00E8F08A /* focus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "focus@2x.png"; sourceTree = "<group>"; };
 		18F50D841D89337F00E8F08A /* focus@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "focus@3x.png"; sourceTree = "<group>"; };
+		18F50D891D894A6B00E8F08A /* LJADLaunchObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJADLaunchObject.h; sourceTree = "<group>"; };
+		18F50D8A1D894A6B00E8F08A /* LJADLaunchObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJADLaunchObject.m; sourceTree = "<group>"; };
+		18F50D8C1D894B0300E8F08A /* UIViewController+LJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LJExtension.h"; sourceTree = "<group>"; };
+		18F50D8D1D894B0300E8F08A /* UIViewController+LJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LJExtension.m"; sourceTree = "<group>"; };
+		18F50D8F1D894BBC00E8F08A /* LJADViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJADViewController.h; sourceTree = "<group>"; };
+		18F50D901D894BBC00E8F08A /* LJADViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJADViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -619,6 +628,7 @@
 				1868A7201D76D1BB00D2CCF9 /* Live */,
 				1868A7281D76D1BB00D2CCF9 /* Mine */,
 				1868A72C1D76D1BB00D2CCF9 /* Other */,
+				18F50D881D894A1A00E8F08A /* Advertisement */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -820,6 +830,8 @@
 				1824476D1D7802CB00520417 /* YYCategoriesMacro.h */,
 				183E19301D828615000A221B /* UIImage+LJExtension.h */,
 				183E19311D828615000A221B /* UIImage+LJExtension.m */,
+				18F50D8C1D894B0300E8F08A /* UIViewController+LJExtension.h */,
+				18F50D8D1D894B0300E8F08A /* UIViewController+LJExtension.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1048,6 +1060,17 @@
 			path = Tabbar;
 			sourceTree = "<group>";
 		};
+		18F50D881D894A1A00E8F08A /* Advertisement */ = {
+			isa = PBXGroup;
+			children = (
+				18F50D891D894A6B00E8F08A /* LJADLaunchObject.h */,
+				18F50D8A1D894A6B00E8F08A /* LJADLaunchObject.m */,
+				18F50D8F1D894BBC00E8F08A /* LJADViewController.h */,
+				18F50D901D894BBC00E8F08A /* LJADViewController.m */,
+			);
+			path = Advertisement;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1233,7 +1256,9 @@
 				1868A77F1D76D38E00D2CCF9 /* MJRefreshHeader.m in Sources */,
 				1868A7881D76D38E00D2CCF9 /* MJRefreshStateHeader.m in Sources */,
 				1868A7CF1D76D5AA00D2CCF9 /* AFURLConnectionOperation.m in Sources */,
+				18F50D8B1D894A6B00E8F08A /* LJADLaunchObject.m in Sources */,
 				1824478D1D78210000520417 /* UIApplication+MemoryLeak.m in Sources */,
+				18F50D911D894BBC00E8F08A /* LJADViewController.m in Sources */,
 				185831A91D87EE6B003C6A37 /* LJLiveAnchorView.m in Sources */,
 				185831A31D87E476003C6A37 /* LJLiveChatSectionView.m in Sources */,
 				1868A77C1D76D38E00D2CCF9 /* MJRefreshBackFooter.m in Sources */,
@@ -1242,6 +1267,7 @@
 				1868A78C1D76D38E00D2CCF9 /* UIScrollView+MJRefresh.m in Sources */,
 				1824473D1D78007C00520417 /* UIView+YYAdd.m in Sources */,
 				18122A191D867F3100EFD3E7 /* LJMainGamesModel.m in Sources */,
+				18F50D8E1D894B0300E8F08A /* UIViewController+LJExtension.m in Sources */,
 				181A057D1D797BA60052D3A3 /* LJRecommendCollectionView.m in Sources */,
 				182447691D7801F000520417 /* UIImage+MultiFormat.m in Sources */,
 				181A056E1D7946C20052D3A3 /* LJGamesCollectionCell.m in Sources */,
