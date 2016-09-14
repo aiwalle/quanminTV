@@ -156,6 +156,9 @@
 		1868A8171D76DAA300D2CCF9 /* mine_sel.png in Resources */ = {isa = PBXBuildFile; fileRef = 1868A7FF1D76DAA300D2CCF9 /* mine_sel.png */; };
 		1868A8181D76DAA300D2CCF9 /* mine_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1868A8001D76DAA300D2CCF9 /* mine_sel@2x.png */; };
 		1868A8191D76DAA300D2CCF9 /* mine_sel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1868A8011D76DAA300D2CCF9 /* mine_sel@3x.png */; };
+		18F50D851D89337F00E8F08A /* focus.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F50D821D89337F00E8F08A /* focus.png */; };
+		18F50D861D89337F00E8F08A /* focus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F50D831D89337F00E8F08A /* focus@2x.png */; };
+		18F50D871D89337F00E8F08A /* focus@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F50D841D89337F00E8F08A /* focus@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -412,6 +415,9 @@
 		1868A7FF1D76DAA300D2CCF9 /* mine_sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mine_sel.png; sourceTree = "<group>"; };
 		1868A8001D76DAA300D2CCF9 /* mine_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_sel@2x.png"; sourceTree = "<group>"; };
 		1868A8011D76DAA300D2CCF9 /* mine_sel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_sel@3x.png"; sourceTree = "<group>"; };
+		18F50D821D89337F00E8F08A /* focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = focus.png; sourceTree = "<group>"; };
+		18F50D831D89337F00E8F08A /* focus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "focus@2x.png"; sourceTree = "<group>"; };
+		18F50D841D89337F00E8F08A /* focus@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "focus@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -503,6 +509,9 @@
 		1824476E1D78136200520417 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				18F50D821D89337F00E8F08A /* focus.png */,
+				18F50D831D89337F00E8F08A /* focus@2x.png */,
+				18F50D841D89337F00E8F08A /* focus@3x.png */,
 				1858318E1D879730003C6A37 /* refresh.png */,
 				1858318F1D879730003C6A37 /* refresh@2x.png */,
 				185831901D879730003C6A37 /* refresh@3x.png */,
@@ -1118,9 +1127,12 @@
 				1868A8101D76DAA300D2CCF9 /* main@3x.png in Resources */,
 				185831921D879730003C6A37 /* refresh@2x.png in Resources */,
 				1868A8181D76DAA300D2CCF9 /* mine_sel@2x.png in Resources */,
+				18F50D861D89337F00E8F08A /* focus@2x.png in Resources */,
+				18F50D851D89337F00E8F08A /* focus.png in Resources */,
 				182447951D78271E00520417 /* normal_100@2x.png in Resources */,
 				182447301D77CF6E00520417 /* nav_image@3x.png in Resources */,
 				185831931D879730003C6A37 /* refresh@3x.png in Resources */,
+				18F50D871D89337F00E8F08A /* focus@3x.png in Resources */,
 				1868A8161D76DAA300D2CCF9 /* mine@3x.png in Resources */,
 				1868A6F81D76A9E800D2CCF9 /* LaunchScreen.storyboard in Resources */,
 				1868A74A1D76D37100D2CCF9 /* EmptyDataView.xib in Resources */,

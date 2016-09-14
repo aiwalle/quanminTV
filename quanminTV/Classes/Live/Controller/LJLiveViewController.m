@@ -26,14 +26,9 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-
-    
-//    [self requsetRoomInfo];
-    
     [self setupSubviews];
-    [self setupVideoPlayer];
     
-    
+    [self requsetRoomInfo];
 }
 
 - (void)setupSubviews {
@@ -41,8 +36,7 @@
     _topVedioView.backgroundColor = [UIColor blackColor];
     [self.view addSubview:_topVedioView];
     
-    _middleAnchorView = [[LJLiveAnchorView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_topVedioView.frame), DeviceWidth, 80)];
-    _middleAnchorView.backgroundColor = [UIColor yellowColor];
+    _middleAnchorView = [[LJLiveAnchorView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_topVedioView.frame), DeviceWidth, 60)];
     [self.view addSubview:_middleAnchorView];
     
     _bottomChatView = [[LJLiveChatView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_middleAnchorView.frame), DeviceWidth, DeviceHeight - CGRectGetMaxY(_middleAnchorView.frame) - 50)];
@@ -54,34 +48,36 @@
     [self.view addSubview:_liveTextView];
 }
 
-- (void)setupVideoPlayer {
-    NSURL *url = [NSURL URLWithString:self.linkObject.title];
-//    NSURL *url = [NSURL URLWithString:@"http://pull99.a8.com/live/1473743094231643.flv"];
-    IJKFFMoviePlayerController *playerVc = [[IJKFFMoviePlayerController alloc] initWithContentURL:url withOptions:nil];
-    [playerVc prepareToPlay];
-    _player = playerVc;
-    playerVc.view.frame = _topVedioView.frame;
-    [_topVedioView addSubview:playerVc.view];
-}
-
-- (void)setupViewsData {
-    
-}
-
 - (void)requsetRoomInfo {
     NSString *url = [NSString stringWithFormat:@"http://www.quanmin.tv/json/rooms/%@/info.json?1473746509", self.linkObject.uid];
     [LJNetWorkingTools GET:url params:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        self.liveInfoDic = [NSMutableDictionary dictionary];
-        [self setupViewsData];
+        
+//        [self setupVideoPlayerWithResponseObject:responseObject];
+        [self setupViewsDataWithResponseObject:responseObject];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
     }];
 }
 
+- (void)setupVideoPlayerWithResponseObject:(id)responseObject {
+    NSString *urlString = [[[[[responseObject valueForKey:@"live"] valueForKey:@"ws"] valueForKey:@"flv"] valueForKey:@"0"] valueForKey:@"src"];
+    NSURL *url = [NSURL URLWithString:urlString];
+    IJKFFMoviePlayerController *playerVc = [[IJKFFMoviePlayerController alloc] initWithContentURL:url withOptions:nil];
+    [playerVc prepareToPlay];
+    _player = playerVc;
+    playerVc.view.frame = _topVedioView.bounds;
+    [_topVedioView addSubview:playerVc.view];
+}
+
+- (void)setupViewsDataWithResponseObject:(id)responseObject {
+    [self.middleAnchorView configIconUrl:[responseObject valueForKey:@"avatar"] nameTitle:[responseObject valueForKey:@"nick"] signTitle:[responseObject valueForKey:@"title"]];
+}
+
+
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-//    [_player pause];
-//    [_player stop];
+    [_player pause];
+    [_player stop];
 }
 
 
