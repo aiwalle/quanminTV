@@ -19,6 +19,8 @@
 #import "LJMainListModel.h"
 #import "LJMainRecommendModel.h"
 #import "LJMainGamesModel.h"
+
+#import "LJRefreshHeader.h"
 @interface LJMainViewController()<UITableViewDataSource, UITableViewDelegate, LJCycleScrollViewDelegate, LJGamesCollectionViewDelegate, LJRecommendCollectionViewDelegate>
 @property (nonatomic, strong) LJCycleScrollView *cycleScrollView;
 @property (nonatomic, strong) LJGamesCollectionView *gamesColletionV;
@@ -39,12 +41,22 @@
     [self.view addSubview:self.mainTableView];
     
     [self requestNetWorking];
+    [self setupRefresh];
 }
 
 - (void)setupTitleLogoView {
     UIImageView *titleIV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 93, 44)];
 //    titleIV.image = [UIImage imageNamed:@"nav_image"];
     self.navigationItem.titleView = titleIV;
+}
+
+- (void)setupRefresh {
+    self.mainTableView.mj_header = [LJRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+//    [self.mainTableView.mj_header beginRefreshing];
+}
+
+- (void)loadNewData {
+    NSLog(@"shuaxinshuaxshuaxinshuaxshuaxinshuaxshuaxinshuaxshuaxinshuaxshuaxinshuax");
 }
 
 - (UITableView *)mainTableView {
@@ -146,7 +158,7 @@
 
 - (void)recommendCollectionView:(LJRecommendCollectionView *)recommendCollectionView didSelectItemAtIndex:(NSInteger)index WithLinkObject:(LJMainLinkObject *)linkObject{
     LJLiveViewController *liveVC = [[LJLiveViewController alloc] init];
-    liveVC.linkObject = linkObject;
+//    liveVC.linkObject = linkObject;
     [self.navigationController pushViewController:liveVC animated:YES];
 }
 

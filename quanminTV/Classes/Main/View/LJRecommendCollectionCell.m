@@ -54,7 +54,7 @@
     if (!_iconImageView) {
         _iconImageView = [[UIImageView alloc] init];
 //        _iconImageView.backgroundColor = [UIColor greenColor];
-        _iconImageView.image = [UIImage imageNamed:@"doc_touxiang"];
+//        _iconImageView.image = [UIImage imageNamed:@"doc_touxiang"];
         
     }
     return _iconImageView;
@@ -64,7 +64,7 @@
     if (!_nameLabel) {
         _nameLabel = [[UILabel alloc] init];
 //        _nameLabel.backgroundColor = [UIColor brownColor];
-        _nameLabel.text = @"猪头123";
+//        _nameLabel.text = @"猪头123";
         _nameLabel.font = themeFont12;
     }
     return _nameLabel;
@@ -74,7 +74,7 @@
     if (!_signLabel) {
         _signLabel = [[UILabel alloc] init];
 //        _signLabel.backgroundColor = [UIColor greenColor];
-        _signLabel.text = @"八戒，别追了";
+//        _signLabel.text = @"八戒，别追了";
         _signLabel.font = themeFont10;
     }
     return _signLabel;
@@ -119,17 +119,17 @@
 }
 
 - (void)setLinkObject:(LJMainLinkObject *)linkObject {
-    _linkObject = linkObject;
-    [_itemImageView sd_setImageWithURL:[NSURL URLWithString:linkObject.thumb] placeholderImage:[UIImage imageNamed:@"normal_100"]];
-    if ([linkObject.view integerValue] > 9999) {
-        _peopleCountLabel.text = [NSString stringWithFormat:@"%.1f万人", [linkObject.view floatValue] / 10000];
-    }else {
-        _peopleCountLabel.text = [NSString stringWithFormat:@"%d人", [linkObject.view intValue]];
-    }
-    
-    [_iconImageView sd_setImageWithURL:[NSURL URLWithString:linkObject.avatar] placeholderImage:[UIImage imageNamed:@"normal_100"]];
-    
-    _nameLabel.text = linkObject.nick;
-    _signLabel.text = linkObject.title;
+//    _linkObject = linkObject;
+//    [_itemImageView sd_setImageWithURL:[NSURL URLWithString:linkObject.thumb] placeholderImage:[UIImage imageNamed:@"normal_100"]];
+//    if ([linkObject.view integerValue] > 9999) {
+//        _peopleCountLabel.text = [NSString stringWithFormat:@"%.1f万人", [linkObject.view floatValue] / 10000];
+//    }else {
+//        _peopleCountLabel.text = [NSString stringWithFormat:@"%d人", [linkObject.view intValue]];
+//    }
+//    
+//    [_iconImageView sd_setImageWithURL:[NSURL URLWithString:linkObject.avatar] placeholderImage:[UIImage imageNamed:@"normal_100"]];
+//    
+//    _nameLabel.text = linkObject.nick;
+//    _signLabel.text = linkObject.title;
 }
 @end

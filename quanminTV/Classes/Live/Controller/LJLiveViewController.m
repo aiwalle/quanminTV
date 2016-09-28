@@ -24,6 +24,7 @@
 @implementation LJLiveViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"直播";
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self setupSubviews];
