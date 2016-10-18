@@ -52,11 +52,10 @@
 
 - (void)setupRefresh {
     self.mainTableView.mj_header = [LJRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
-//    [self.mainTableView.mj_header beginRefreshing];
 }
 
 - (void)loadNewData {
-    NSLog(@"shuaxinshuaxshuaxinshuaxshuaxinshuaxshuaxinshuaxshuaxinshuaxshuaxinshuax");
+    [self requestNetWorking];
 }
 
 - (UITableView *)mainTableView {
@@ -89,8 +88,9 @@
         // 获取直播栏目的信息
 //        [self setupBannerGamesWithResponseObject:responseObject];
         [self.mainTableView reloadData];
+        [self.mainTableView.mj_header endRefreshing];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        
+        [self.mainTableView.mj_header endRefreshing];
     }];
 }
 
