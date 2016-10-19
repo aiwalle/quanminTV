@@ -27,7 +27,7 @@
     [self setupTitleTextAndBarButtonItem];
     [self setupHideKeyboard];
     [self addNotiToObserveUserLogInfomation];
-    
+    self.navigationController.navigationBar.translucent = NO;
 }
 
 - (void)viewWillDisappear:(BOOL)animated{

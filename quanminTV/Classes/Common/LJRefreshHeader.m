@@ -16,37 +16,14 @@
 - (void)prepare
 {
     [super prepare];
-    self.backgroundColor = [UIColor lightGrayColor];
+    self.backgroundColor = [UIColor whiteColor];
     // 设置控件的高度
     self.mj_h = 110;
     
     HYHeaderRefreshView * headerRef = [[HYHeaderRefreshView alloc] init];
     [self addSubview:headerRef];
     _headerRef = headerRef;
-    
-    // 添加label
-//    UILabel *label = [[UILabel alloc] init];
-//    label.textColor = [UIColor colorWithRed:1.0 green:0.5 blue:0.0 alpha:1.0];
-//    label.font = [UIFont boldSystemFontOfSize:16];
-//    label.textAlignment = NSTextAlignmentCenter;
-//    [self addSubview:label];
-//    self.label = label;
-//    
-//    // 打酱油的开关
-//    UISwitch *s = [[UISwitch alloc] init];
-//    [self addSubview:s];
-//    self.s = s;
-//    
-//    // logo
-//    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Logo"]];
-//    logo.contentMode = UIViewContentModeScaleAspectFit;
-//    [self addSubview:logo];
-//    self.logo = logo;
-//    
-//    // loading
-//    UIActivityIndicatorView *loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-//    [self addSubview:loading];
-//    self.loading = loading;
+
 }
 
 #pragma mark 在这里设置子控件的位置和尺寸
@@ -55,14 +32,7 @@
     [super placeSubviews];
     
     self.headerRef.frame = self.bounds;
-    
-    
-//    self.label.frame = self.bounds;
-//    
-//    self.logo.bounds = CGRectMake(0, 0, self.bounds.size.width, 100);
-//    self.logo.center = CGPointMake(self.mj_w * 0.5, - self.logo.mj_h + 20);
-//    
-//    self.loading.center = CGPointMake(self.mj_w - 30, self.mj_h * 0.5);
+
 }
 
 #pragma mark 监听scrollView的contentOffset改变

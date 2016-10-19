@@ -15,6 +15,7 @@
 #import "LJRecommendCell.h"
 #import "LJRecommendCollectionView.h"
 #import "LJLiveViewController.h"
+#import "LJDataBaseController.h"
 
 #import "LJMainListModel.h"
 #import "LJMainRecommendModel.h"
@@ -31,23 +32,44 @@
 @property (nonatomic, strong) NSMutableArray *bannerArr;
 @property (nonatomic, strong) NSMutableArray *bannerGamesArr;
 @property (nonatomic, strong) NSMutableArray *recommendLivingArr;
+
 @end
 
 @implementation LJMainViewController
+- (void)dealloc {
+    [LJNetWorkingTools cancelAllRequest];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupTitleLogoView];
+    [self setupNavigationbarRightBtn];
     [self.view addSubview:self.mainTableView];
     
     [self requestNetWorking];
     [self setupRefresh];
+    
 }
 
 - (void)setupTitleLogoView {
     UIImageView *titleIV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 93, 44)];
 //    titleIV.image = [UIImage imageNamed:@"nav_image"];
     self.navigationItem.titleView = titleIV;
+}
+
+- (void)setupNavigationbarRightBtn {
+    UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightBtn setTitle:@"测试" forState:UIControlStateNormal];
+    [rightBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    [rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [rightBtn sizeToFit];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+    
+}
+
+- (void)rightBtnClick {
+    LJDataBaseController *dbController = [[LJDataBaseController alloc] init];
+    [self.navigationController pushViewController:dbController animated:YES];
 }
 
 - (void)setupRefresh {
@@ -158,7 +180,7 @@
 
 - (void)recommendCollectionView:(LJRecommendCollectionView *)recommendCollectionView didSelectItemAtIndex:(NSInteger)index WithLinkObject:(LJMainLinkObject *)linkObject{
     LJLiveViewController *liveVC = [[LJLiveViewController alloc] init];
-//    liveVC.linkObject = linkObject;
+////    liveVC.linkObject = linkObject;
     [self.navigationController pushViewController:liveVC animated:YES];
 }
 

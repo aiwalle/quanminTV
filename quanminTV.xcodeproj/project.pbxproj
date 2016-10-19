@@ -57,6 +57,8 @@
 		182447921D78210000520417 /* UIView+MemoryLeak.m in Sources */ = {isa = PBXBuildFile; fileRef = 182447871D78210000520417 /* UIView+MemoryLeak.m */; };
 		182447931D78210000520417 /* UIViewController+MemoryLeak.m in Sources */ = {isa = PBXBuildFile; fileRef = 182447891D78210000520417 /* UIViewController+MemoryLeak.m */; };
 		182447951D78271E00520417 /* normal_100@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182447941D78271E00520417 /* normal_100@2x.png */; };
+		1831FD381DB70CBA006FF332 /* LJDataBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1831FD371DB70CBA006FF332 /* LJDataBaseController.m */; };
+		1831FD3A1DB70DA4006FF332 /* LJDataBaseController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1831FD391DB70DA4006FF332 /* LJDataBaseController.xib */; };
 		183E192F1D826148000A221B /* doc_touxiang@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 183E192E1D826148000A221B /* doc_touxiang@2x.png */; };
 		183E19321D828615000A221B /* UIImage+LJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E19311D828615000A221B /* UIImage+LJExtension.m */; };
 		183E19351D82877B000A221B /* logisticicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 183E19331D82877B000A221B /* logisticicon@2x.png */; };
@@ -208,6 +210,7 @@
 		18D588661DB5FF750025B513 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D5885E1DB5FF750025B513 /* FMDatabaseQueue.m */; };
 		18D588671DB5FF750025B513 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D588611DB5FF750025B513 /* FMResultSet.m */; };
 		18D588681DB5FF750025B513 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18D588621DB5FF750025B513 /* Info.plist */; };
+		18D5886B1DB610BF0025B513 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D5886A1DB610BF0025B513 /* libsqlite3.tbd */; };
 		18F50D851D89337F00E8F08A /* focus.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F50D821D89337F00E8F08A /* focus.png */; };
 		18F50D861D89337F00E8F08A /* focus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F50D831D89337F00E8F08A /* focus@2x.png */; };
 		18F50D871D89337F00E8F08A /* focus@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F50D841D89337F00E8F08A /* focus@3x.png */; };
@@ -311,6 +314,9 @@
 		182447881D78210000520417 /* UIViewController+MemoryLeak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MemoryLeak.h"; sourceTree = "<group>"; };
 		182447891D78210000520417 /* UIViewController+MemoryLeak.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MemoryLeak.m"; sourceTree = "<group>"; };
 		182447941D78271E00520417 /* normal_100@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "normal_100@2x.png"; sourceTree = "<group>"; };
+		1831FD361DB70CBA006FF332 /* LJDataBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJDataBaseController.h; sourceTree = "<group>"; };
+		1831FD371DB70CBA006FF332 /* LJDataBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJDataBaseController.m; sourceTree = "<group>"; };
+		1831FD391DB70DA4006FF332 /* LJDataBaseController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LJDataBaseController.xib; sourceTree = "<group>"; };
 		183E192E1D826148000A221B /* doc_touxiang@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "doc_touxiang@2x.png"; sourceTree = "<group>"; };
 		183E19301D828615000A221B /* UIImage+LJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LJExtension.h"; sourceTree = "<group>"; };
 		183E19311D828615000A221B /* UIImage+LJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LJExtension.m"; sourceTree = "<group>"; };
@@ -530,6 +536,7 @@
 		18D588601DB5FF750025B513 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		18D588611DB5FF750025B513 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		18D588621DB5FF750025B513 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18D5886A1DB610BF0025B513 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		18F50D821D89337F00E8F08A /* focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = focus.png; sourceTree = "<group>"; };
 		18F50D831D89337F00E8F08A /* focus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "focus@2x.png"; sourceTree = "<group>"; };
 		18F50D841D89337F00E8F08A /* focus@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "focus@3x.png"; sourceTree = "<group>"; };
@@ -546,6 +553,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D5886B1DB610BF0025B513 /* libsqlite3.tbd in Frameworks */,
 				1868A7151D76AB0300D2CCF9 /* AudioToolbox.framework in Frameworks */,
 				1868A7131D76AAF900D2CCF9 /* AVFoundation.framework in Frameworks */,
 				1868A7111D76AAF100D2CCF9 /* CoreMedia.framework in Frameworks */,
@@ -685,6 +693,7 @@
 				1868A6E71D76A9E800D2CCF9 /* quanminTV */,
 				1868A6FF1D76AA5900D2CCF9 /* framework */,
 				1868A6E61D76A9E800D2CCF9 /* Products */,
+				18D588691DB610BF0025B513 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -846,6 +855,9 @@
 				1868A7DE1D76D6E800D2CCF9 /* LJMainViewController.m */,
 				182447711D781D8400520417 /* LJBannerViewController.h */,
 				182447721D781D8400520417 /* LJBannerViewController.m */,
+				1831FD361DB70CBA006FF332 /* LJDataBaseController.h */,
+				1831FD371DB70CBA006FF332 /* LJDataBaseController.m */,
+				1831FD391DB70DA4006FF332 /* LJDataBaseController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1248,6 +1260,14 @@
 			path = fmdb;
 			sourceTree = "<group>";
 		};
+		18D588691DB610BF0025B513 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18D5886A1DB610BF0025B513 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		18F50D881D894A1A00E8F08A /* Advertisement */ = {
 			isa = PBXGroup;
 			children = (
@@ -1291,6 +1311,7 @@
 				TargetAttributes = {
 					1868A6E41D76A9E800D2CCF9 = {
 						CreatedOnToolsVersion = 7.2;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -1397,6 +1418,7 @@
 				1824472E1D77CF6E00520417 /* nav_image.png in Resources */,
 				1868A8061D76DAA300D2CCF9 /* column_sel@2x.png in Resources */,
 				18B8E8271D8F857400DFAFE0 /* 下拉刷新10051.png in Resources */,
+				1831FD3A1DB70DA4006FF332 /* LJDataBaseController.xib in Resources */,
 				18B8E8181D8F857400DFAFE0 /* 下拉刷新10021.png in Resources */,
 				1868A8141D76DAA300D2CCF9 /* mine.png in Resources */,
 				1868A8131D76DAA300D2CCF9 /* main_sel@3x.png in Resources */,
@@ -1514,6 +1536,7 @@
 				1868A77B1D76D38E00D2CCF9 /* MJRefreshAutoFooter.m in Sources */,
 				18D588651DB5FF750025B513 /* FMDatabasePool.m in Sources */,
 				1868A79D1D76D3BF00D2CCF9 /* LJNetWorkingTools.m in Sources */,
+				1831FD381DB70CBA006FF332 /* LJDataBaseController.m in Sources */,
 				182447651D7801F000520417 /* SDWebImageManager.m in Sources */,
 				1824478E1D78210000520417 /* UINavigationController+MemoryLeak.m in Sources */,
 				182447631D7801F000520417 /* SDWebImageDownloader.m in Sources */,
@@ -1624,6 +1647,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/framework",
@@ -1641,6 +1666,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/framework",

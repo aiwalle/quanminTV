@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LJDataBaseController">
+            <connections>
+                <outlet property="view" destination="lwr-rI-xBN" id="4Bj-hr-lPB"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="lwr-rI-xBN">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPd-cB-Ijm">
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNM-hm-uoh">
+                            <state key="normal" title="建表">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="creatDataBase:" destination="-1" eventType="touchUpInside" id="rm9-ii-0Um"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="RNM-hm-uoh" firstAttribute="top" secondItem="fPd-cB-Ijm" secondAttribute="top" constant="20" id="Ibu-Op-CDa"/>
+                        <constraint firstItem="RNM-hm-uoh" firstAttribute="centerX" secondItem="fPd-cB-Ijm" secondAttribute="centerX" id="iHY-XM-eXL"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KLI-09-qOe">
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="649-PO-Nm2">
+                            <state key="normal" title="插入数据">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="insertDataBase:" destination="-1" eventType="touchUpInside" id="oWX-lM-0Vu"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="649-PO-Nm2" firstAttribute="centerX" secondItem="KLI-09-qOe" secondAttribute="centerX" id="7pJ-Wl-Nle"/>
+                        <constraint firstItem="649-PO-Nm2" firstAttribute="top" secondItem="KLI-09-qOe" secondAttribute="top" constant="20" id="Jgl-nK-mkW"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KY5-R4-lhW">
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpU-n7-2m7">
+                            <state key="normal" title="查询数据">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="queryDataBase:" destination="-1" eventType="touchUpInside" id="5rf-Yw-7QA"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="mpU-n7-2m7" firstAttribute="centerX" secondItem="KY5-R4-lhW" secondAttribute="centerX" id="YTr-7u-oCk"/>
+                        <constraint firstItem="mpU-n7-2m7" firstAttribute="top" secondItem="KY5-R4-lhW" secondAttribute="top" constant="20" id="aAt-TT-u5y"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mZj-bt-KWb">
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPQ-of-f57">
+                            <state key="normal" title="删表">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="deleteDataBase:" destination="-1" eventType="touchUpInside" id="e2a-Ac-oJB"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="XPQ-of-f57" firstAttribute="top" secondItem="mZj-bt-KWb" secondAttribute="top" constant="20" id="XJS-v6-cJH"/>
+                        <constraint firstItem="XPQ-of-f57" firstAttribute="centerX" secondItem="mZj-bt-KWb" secondAttribute="centerX" id="iLN-Sv-ewk"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="fPd-cB-Ijm" firstAttribute="height" secondItem="lwr-rI-xBN" secondAttribute="height" multiplier="1:3" id="1gz-Au-jc7"/>
+                <constraint firstItem="fPd-cB-Ijm" firstAttribute="leading" secondItem="lwr-rI-xBN" secondAttribute="leading" constant="20" id="7jN-ZO-osw"/>
+                <constraint firstItem="KLI-09-qOe" firstAttribute="width" secondItem="fPd-cB-Ijm" secondAttribute="width" id="7ka-gl-7Gc"/>
+                <constraint firstItem="KY5-R4-lhW" firstAttribute="leading" secondItem="fPd-cB-Ijm" secondAttribute="leading" id="9Az-xo-yLM"/>
+                <constraint firstItem="mZj-bt-KWb" firstAttribute="width" secondItem="fPd-cB-Ijm" secondAttribute="width" id="AoJ-VJ-uwT"/>
+                <constraint firstItem="mZj-bt-KWb" firstAttribute="height" secondItem="fPd-cB-Ijm" secondAttribute="height" id="C4e-Up-RZl"/>
+                <constraint firstItem="KY5-R4-lhW" firstAttribute="top" secondItem="fPd-cB-Ijm" secondAttribute="bottom" constant="50" id="CZI-My-Tut"/>
+                <constraint firstItem="fPd-cB-Ijm" firstAttribute="top" secondItem="lwr-rI-xBN" secondAttribute="top" constant="20" id="JfJ-9F-cWV"/>
+                <constraint firstItem="KY5-R4-lhW" firstAttribute="height" secondItem="fPd-cB-Ijm" secondAttribute="height" id="MXi-pe-w2U"/>
+                <constraint firstAttribute="trailing" secondItem="KLI-09-qOe" secondAttribute="trailing" constant="20" id="OH7-Fb-eSz"/>
+                <constraint firstItem="mZj-bt-KWb" firstAttribute="trailing" secondItem="KLI-09-qOe" secondAttribute="trailing" id="VSl-F7-Mhy"/>
+                <constraint firstItem="KLI-09-qOe" firstAttribute="top" secondItem="fPd-cB-Ijm" secondAttribute="top" id="bhQ-tk-gNU"/>
+                <constraint firstItem="KY5-R4-lhW" firstAttribute="width" secondItem="fPd-cB-Ijm" secondAttribute="width" id="cJW-ma-qjW"/>
+                <constraint firstItem="fPd-cB-Ijm" firstAttribute="width" secondItem="lwr-rI-xBN" secondAttribute="width" multiplier="1:3" id="lbW-cF-6bJ"/>
+                <constraint firstItem="KLI-09-qOe" firstAttribute="height" secondItem="fPd-cB-Ijm" secondAttribute="height" id="nBS-Fe-SHX"/>
+                <constraint firstItem="mZj-bt-KWb" firstAttribute="top" secondItem="KY5-R4-lhW" secondAttribute="top" id="zP5-o1-sau"/>
+            </constraints>
+            <point key="canvasLocation" x="-25.5" y="97.5"/>
+        </view>
+    </objects>
+</document>
