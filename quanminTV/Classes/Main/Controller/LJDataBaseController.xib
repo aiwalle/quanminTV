@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LJDataBaseController">
             <connections>
+                <outlet property="testImgeView" destination="bnh-K9-MDA" id="BDj-4o-AoX"/>
                 <outlet property="view" destination="lwr-rI-xBN" id="4Bj-hr-lPB"/>
             </connections>
         </placeholder>
@@ -85,16 +86,24 @@
                         <constraint firstItem="XPQ-of-f57" firstAttribute="centerX" secondItem="mZj-bt-KWb" secondAttribute="centerX" id="iLN-Sv-ewk"/>
                     </constraints>
                 </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bnh-K9-MDA">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="Vd2-Rm-GVg"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="fPd-cB-Ijm" firstAttribute="height" secondItem="lwr-rI-xBN" secondAttribute="height" multiplier="1:3" id="1gz-Au-jc7"/>
+                <constraint firstItem="bnh-K9-MDA" firstAttribute="leading" secondItem="lwr-rI-xBN" secondAttribute="leading" constant="50" id="5Wz-uW-Qj5"/>
                 <constraint firstItem="fPd-cB-Ijm" firstAttribute="leading" secondItem="lwr-rI-xBN" secondAttribute="leading" constant="20" id="7jN-ZO-osw"/>
                 <constraint firstItem="KLI-09-qOe" firstAttribute="width" secondItem="fPd-cB-Ijm" secondAttribute="width" id="7ka-gl-7Gc"/>
                 <constraint firstItem="KY5-R4-lhW" firstAttribute="leading" secondItem="fPd-cB-Ijm" secondAttribute="leading" id="9Az-xo-yLM"/>
                 <constraint firstItem="mZj-bt-KWb" firstAttribute="width" secondItem="fPd-cB-Ijm" secondAttribute="width" id="AoJ-VJ-uwT"/>
+                <constraint firstAttribute="bottom" secondItem="bnh-K9-MDA" secondAttribute="bottom" constant="10" id="BKz-gL-S1X"/>
                 <constraint firstItem="mZj-bt-KWb" firstAttribute="height" secondItem="fPd-cB-Ijm" secondAttribute="height" id="C4e-Up-RZl"/>
                 <constraint firstItem="KY5-R4-lhW" firstAttribute="top" secondItem="fPd-cB-Ijm" secondAttribute="bottom" constant="50" id="CZI-My-Tut"/>
+                <constraint firstAttribute="trailing" secondItem="bnh-K9-MDA" secondAttribute="trailing" constant="50" id="FU2-Y0-4ui"/>
                 <constraint firstItem="fPd-cB-Ijm" firstAttribute="top" secondItem="lwr-rI-xBN" secondAttribute="top" constant="20" id="JfJ-9F-cWV"/>
                 <constraint firstItem="KY5-R4-lhW" firstAttribute="height" secondItem="fPd-cB-Ijm" secondAttribute="height" id="MXi-pe-w2U"/>
                 <constraint firstAttribute="trailing" secondItem="KLI-09-qOe" secondAttribute="trailing" constant="20" id="OH7-Fb-eSz"/>

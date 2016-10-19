@@ -83,28 +83,36 @@
 }
 
 #pragma mark - **************** Private
+static AFHTTPSessionManager *instance;
 /** 生成AFHTTPSessionManager单例对象（私有方法）*/
-+ (AFHTTPSessionManager *)shareManager {
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"application/json",
-                                                                              @"text/html",
-                                                                              @"text/json",
-                                                                              @"text/plain",
-                                                                              @"text/javascript",
-                                                                              @"text/xml",
-                                                                              @"image/*"]];
-    // 设置允许同时最大并发数量
-    manager.operationQueue.maxConcurrentOperationCount = 3;
++ (AFHTTPSessionManager *)shareInstance {
+    if (instance == nil) {
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            instance = [AFHTTPSessionManager manager];
+            [instance.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+            [instance.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+            instance.responseSerializer = [AFJSONResponseSerializer serializer];
+            instance.requestSerializer.timeoutInterval = 20.f;
+            instance.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"application/json",
+                                                                                       @"text/html",
+                                                                                       @"text/json",
+                                                                                       @"text/plain",
+                                                                                       @"text/javascript",
+                                                                                       @"text/xml",
+                                                                                       @"image/*"]];
+            // 设置允许同时最大并发数量
+            instance.operationQueue.maxConcurrentOperationCount = 3;
+        });
+    }
     
-    return manager;
+    return instance;
+
 }
 
 /** 请求网络数据*/
 + (NSURLSessionTask *)requestWithUrl:(NSString *)url httpMethod:(NetWorkingRequestType)httpMethod params:(NSDictionary *)params success:(void (^)(NSURLSessionDataTask *task, id responseObject))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure {
-    AFHTTPSessionManager *manager = [self shareManager];
+    AFHTTPSessionManager *manager = [self shareInstance];
     
     NSURLSessionTask *task = nil;
     if (httpMethod == NetWorkingRequestTypeGET) {
@@ -141,7 +149,7 @@
 
 /** 取消网络请求*/
 + (void)cancelAllRequest {
-    [[[self shareManager] operationQueue] cancelAllOperations];
+    [[[self shareInstance] operationQueue] cancelAllOperations];
 }
 
 @end

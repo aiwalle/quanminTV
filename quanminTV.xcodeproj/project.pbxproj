@@ -59,6 +59,7 @@
 		182447951D78271E00520417 /* normal_100@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182447941D78271E00520417 /* normal_100@2x.png */; };
 		1831FD381DB70CBA006FF332 /* LJDataBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1831FD371DB70CBA006FF332 /* LJDataBaseController.m */; };
 		1831FD3A1DB70DA4006FF332 /* LJDataBaseController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1831FD391DB70DA4006FF332 /* LJDataBaseController.xib */; };
+		1831FD471DB75718006FF332 /* LJDataBaseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1831FD461DB75718006FF332 /* LJDataBaseTool.m */; };
 		183E192F1D826148000A221B /* doc_touxiang@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 183E192E1D826148000A221B /* doc_touxiang@2x.png */; };
 		183E19321D828615000A221B /* UIImage+LJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E19311D828615000A221B /* UIImage+LJExtension.m */; };
 		183E19351D82877B000A221B /* logisticicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 183E19331D82877B000A221B /* logisticicon@2x.png */; };
@@ -317,6 +318,8 @@
 		1831FD361DB70CBA006FF332 /* LJDataBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJDataBaseController.h; sourceTree = "<group>"; };
 		1831FD371DB70CBA006FF332 /* LJDataBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJDataBaseController.m; sourceTree = "<group>"; };
 		1831FD391DB70DA4006FF332 /* LJDataBaseController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LJDataBaseController.xib; sourceTree = "<group>"; };
+		1831FD451DB75718006FF332 /* LJDataBaseTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJDataBaseTool.h; sourceTree = "<group>"; };
+		1831FD461DB75718006FF332 /* LJDataBaseTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJDataBaseTool.m; sourceTree = "<group>"; };
 		183E192E1D826148000A221B /* doc_touxiang@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "doc_touxiang@2x.png"; sourceTree = "<group>"; };
 		183E19301D828615000A221B /* UIImage+LJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LJExtension.h"; sourceTree = "<group>"; };
 		183E19311D828615000A221B /* UIImage+LJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LJExtension.m"; sourceTree = "<group>"; };
@@ -950,6 +953,8 @@
 				1868A78F1D76D3BF00D2CCF9 /* CurrentVCManager.m */,
 				1868A7921D76D3BF00D2CCF9 /* LJNetWorkingTools.h */,
 				1868A7931D76D3BF00D2CCF9 /* LJNetWorkingTools.m */,
+				1831FD451DB75718006FF332 /* LJDataBaseTool.h */,
+				1831FD461DB75718006FF332 /* LJDataBaseTool.m */,
 				1868A7961D76D3BF00D2CCF9 /* Singleton.h */,
 				1868A7971D76D3BF00D2CCF9 /* UIAlertController+Extension.h */,
 				1868A7981D76D3BF00D2CCF9 /* UIAlertController+Extension.m */,
@@ -1503,6 +1508,7 @@
 				1868A71A1D76D19400D2CCF9 /* main.m in Sources */,
 				1868A7D61D76D5AA00D2CCF9 /* UIAlertView+AFNetworking.m in Sources */,
 				1868A7A01D76D3BF00D2CCF9 /* UICreator.m in Sources */,
+				1831FD471DB75718006FF332 /* LJDataBaseTool.m in Sources */,
 				181A056A1D7919550052D3A3 /* LJGamesCollectionView.m in Sources */,
 				1868A7861D76D38E00D2CCF9 /* MJRefreshGifHeader.m in Sources */,
 				182447601D7801F000520417 /* SDImageCache.m in Sources */,
