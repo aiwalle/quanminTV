@@ -15,7 +15,9 @@
 #import "LJRecommendCell.h"
 #import "LJRecommendCollectionView.h"
 #import "LJLiveViewController.h"
+
 #import "LJDataBaseController.h"
+#import "LJFoldViewController.h"
 
 #import "LJMainListModel.h"
 #import "LJMainRecommendModel.h"
@@ -68,8 +70,13 @@
 }
 
 - (void)rightBtnClick {
-    LJDataBaseController *dbController = [[LJDataBaseController alloc] init];
-    [self.navigationController pushViewController:dbController animated:YES];
+//    LJDataBaseController *dbController = [[LJDataBaseController alloc] init];
+//    [self.navigationController pushViewController:dbController animated:YES];
+    
+    
+    LJFoldViewController *foldController = [[LJFoldViewController alloc] init];
+    [self.navigationController pushViewController:foldController animated:YES];
+    
 }
 
 - (void)setupRefresh {

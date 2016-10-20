@@ -57,6 +57,7 @@
 		182447921D78210000520417 /* UIView+MemoryLeak.m in Sources */ = {isa = PBXBuildFile; fileRef = 182447871D78210000520417 /* UIView+MemoryLeak.m */; };
 		182447931D78210000520417 /* UIViewController+MemoryLeak.m in Sources */ = {isa = PBXBuildFile; fileRef = 182447891D78210000520417 /* UIViewController+MemoryLeak.m */; };
 		182447951D78271E00520417 /* normal_100@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182447941D78271E00520417 /* normal_100@2x.png */; };
+		182898F21DB8A640005C00BB /* LJFoldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182898F11DB8A640005C00BB /* LJFoldViewController.m */; };
 		1831FD381DB70CBA006FF332 /* LJDataBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1831FD371DB70CBA006FF332 /* LJDataBaseController.m */; };
 		1831FD3A1DB70DA4006FF332 /* LJDataBaseController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1831FD391DB70DA4006FF332 /* LJDataBaseController.xib */; };
 		1831FD471DB75718006FF332 /* LJDataBaseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1831FD461DB75718006FF332 /* LJDataBaseTool.m */; };
@@ -315,6 +316,8 @@
 		182447881D78210000520417 /* UIViewController+MemoryLeak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MemoryLeak.h"; sourceTree = "<group>"; };
 		182447891D78210000520417 /* UIViewController+MemoryLeak.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MemoryLeak.m"; sourceTree = "<group>"; };
 		182447941D78271E00520417 /* normal_100@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "normal_100@2x.png"; sourceTree = "<group>"; };
+		182898F01DB8A640005C00BB /* LJFoldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJFoldViewController.h; sourceTree = "<group>"; };
+		182898F11DB8A640005C00BB /* LJFoldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJFoldViewController.m; sourceTree = "<group>"; };
 		1831FD361DB70CBA006FF332 /* LJDataBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJDataBaseController.h; sourceTree = "<group>"; };
 		1831FD371DB70CBA006FF332 /* LJDataBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJDataBaseController.m; sourceTree = "<group>"; };
 		1831FD391DB70DA4006FF332 /* LJDataBaseController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LJDataBaseController.xib; sourceTree = "<group>"; };
@@ -858,6 +861,8 @@
 				1868A7DE1D76D6E800D2CCF9 /* LJMainViewController.m */,
 				182447711D781D8400520417 /* LJBannerViewController.h */,
 				182447721D781D8400520417 /* LJBannerViewController.m */,
+				182898F01DB8A640005C00BB /* LJFoldViewController.h */,
+				182898F11DB8A640005C00BB /* LJFoldViewController.m */,
 				1831FD361DB70CBA006FF332 /* LJDataBaseController.h */,
 				1831FD371DB70CBA006FF332 /* LJDataBaseController.m */,
 				1831FD391DB70DA4006FF332 /* LJDataBaseController.xib */,
@@ -1485,6 +1490,7 @@
 				1824478F1D78210000520417 /* UIPageViewController+MemoryLeak.m in Sources */,
 				1824476B1D7801F000520417 /* UIImageView+WebCache.m in Sources */,
 				181A05711D794CF90052D3A3 /* LJColumnListController.m in Sources */,
+				182898F21DB8A640005C00BB /* LJFoldViewController.m in Sources */,
 				18122A0D1D864D2300EFD3E7 /* LJMainListModel.m in Sources */,
 				1868A78B1D76D38E00D2CCF9 /* UIScrollView+MJExtension.m in Sources */,
 				182447911D78210000520417 /* UITabBarController+MemoryLeak.m in Sources */,
