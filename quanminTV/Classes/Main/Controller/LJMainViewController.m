@@ -115,7 +115,7 @@
         // 获取banner信息
 //        [self setupBannerDataWithResponseObject:responseObject];
         // 获取直播栏目的信息
-//        [self setupBannerGamesWithResponseObject:responseObject];
+        [self setupBannerGamesWithResponseObject:responseObject];
         [self.mainTableView reloadData];
         [self.mainTableView.mj_header endRefreshing];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -187,7 +187,7 @@
 
 - (void)recommendCollectionView:(LJRecommendCollectionView *)recommendCollectionView didSelectItemAtIndex:(NSInteger)index WithLinkObject:(LJMainLinkObject *)linkObject{
     LJLiveViewController *liveVC = [[LJLiveViewController alloc] init];
-////    liveVC.linkObject = linkObject;
+//    liveVC.linkObject = linkObject;
     [self.navigationController pushViewController:liveVC animated:YES];
 }
 
